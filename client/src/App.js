@@ -1,23 +1,39 @@
-import logo from './logo.svg';
+import React, { useState, useEffect } from 'react';
+import { Routes, Route } from "react-router-dom";
 import './App.css';
 
+// import Loading from './components/Loading';
+import NavBar from './components/NavBar';
+import LoginForm from './components/LoginForm';
+import SignupForm from './components/SignupForm';
+
 function App() {
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    fetch("/me").then((r) => {
+      if (r.ok) {
+        r.json().then((user) => setUser(user));
+      }
+    });
+  }, []);
+
+  if (!user) return <LoginForm setUser={setUser} />
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <NavBar />
       </header>
+      <main>
+        <Routes>
+
+          <Route path={"/signup"}>
+            <SignupForm setUser={setUser} />
+          </Route>
+
+        </Routes>
+      </main>
     </div>
   );
 }
