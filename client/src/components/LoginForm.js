@@ -23,11 +23,11 @@ function LoginForm({ setUser }) {
             } else {
                 r.json().then((err) => {
                     console.log(err.errors)
-                    setUsername("");
-                    setPassword("");
                 });
             }
         });
+        setUsername("");
+        setPassword("");
     }
 
     return(

@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Routes, Route } from "react-router-dom";
+
+import Home from './components/Home';
+import SignupForm from './components/SignupForm';
+import LoginForm from './components/LoginForm';
+
 import './App.css';
 
-// import Loading from './components/Loading';
-import NavBar from './components/NavBar';
-import LoginForm from './components/LoginForm';
-import SignupForm from './components/SignupForm';
 
 function App() {
   const [user, setUser] = useState(null);
@@ -18,22 +19,20 @@ function App() {
     });
   }, []);
 
-  if (!user) return <LoginForm setUser={setUser} />
+  // if (!user) return <LoginForm setUser={setUser} />
 
   return (
     <div className="App">
-      <header className="App-header">
-        <NavBar />
-      </header>
-      <main>
+        <Home user={user} setUser={setUser} />
         <Routes>
 
-          <Route path={"/signup"}>
-            <SignupForm setUser={setUser} />
-          </Route>
+            <Route path={"/signup"} render={<SignupForm user={user} setUser={setUser} />} />
+
+            <Route path={"/login"} render={<LoginForm user={user} setUser={setUser} />} />
+
+            {/* <Route path={"/me"} render={<Dashboard />} /> */}
 
         </Routes>
-      </main>
     </div>
   );
 }
