@@ -1,15 +1,16 @@
 import React, { useState } from 'react';
 import { Col, Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+import Loading from './Loading';
 
 function LoginForm({ setUser }) {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
-    const [errors, setErrors] = useState([]);
+    const [errors, setErrors] = useState("");
     const [isLoading, setIsLoading] = useState(false);
 
     function handleSubmit(e) {
         e.preventDefault();
-        setIsLoading(!isLoading);
+        setIsLoading(true);
 
         fetch("/login", {
             method: "POST",
@@ -18,12 +19,14 @@ function LoginForm({ setUser }) {
             },
             body: JSON.stringify({ username, password }),
         }).then((r) => {
-            setIsLoading(!isLoading);
+            setIsLoading(false);
             if (r.ok) {
-                r.json().then((user) => setUser(user));
+                r.json().then((user) => {
+                    setUser(user)
+                });
             } else {
                 r.json().then((err) => {
-                    console.log(err.errors)
+                    setErrors(err.errors)
                 });
             }
         });
@@ -33,8 +36,7 @@ function LoginForm({ setUser }) {
 
     return(
         <div id='login'>
-            <Form>
-            Login
+            <Form onSubmit={handleSubmit}>
             <FormGroup row>
                 <Label for="username" sm={1}>Username</Label>
                 <Col sm={3}>
@@ -44,7 +46,7 @@ function LoginForm({ setUser }) {
                     placeholder='username'
                     value={username}
                     onChange={(e) => setUsername(e.target.value)}
-                    />
+                />
                 </Col>
             </FormGroup>
 
@@ -60,12 +62,11 @@ function LoginForm({ setUser }) {
                     />
                 </Col>
             </FormGroup>
-
-                <br />
-                <Button 
-                  type='submit'
-                  value="Submit"
-                >Submit</Button>
+            <FormGroup row>
+                <Col sm={{ size: 15 }}>
+                    <Button>{!isLoading ? "Submit" : "Loading..."}</Button>
+                </Col>
+            </FormGroup>
                 <p>
                     {!!errors ? errors : null}
                 </p>
