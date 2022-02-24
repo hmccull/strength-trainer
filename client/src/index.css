@@ -10,6 +10,10 @@ code {
     monospace;
 }
 
-#login-container {
+#login {
+  margin-top: 10%;
+}
+
+#signup {
   margin-top: 10%;
 }

@@ -31,7 +31,7 @@ function NavigationBar({ user, setUser }) {
             <Navbar
                 color="dark"
                 dark
-                expand="sm"
+                expand="md"
                 fixed="top"
                 full
             >

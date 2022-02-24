@@ -10,10 +10,7 @@ function Home({ user, setUser }) {
          <div>
              <div>
                 <NavigationBar user={user} setUser={setUser} />
-             </div>
-             <div id='login-container'>
-                <LoginForm setUser={setUser}/>
-             </div>                
+             </div>              
          </div>
      )
 }

@@ -4,6 +4,7 @@ import { Routes, Route } from "react-router-dom";
 import Home from './components/Home';
 import SignupForm from './components/SignupForm';
 import LoginForm from './components/LoginForm';
+import Loading from './components/Loading';
 
 import './App.css';
 
@@ -26,9 +27,9 @@ function App() {
         <Home user={user} setUser={setUser} />
         <Routes>
 
-            <Route path={"/signup"} render={<SignupForm user={user} setUser={setUser} />} />
+            <Route path={"/login"} element={<LoginForm user={user} setUser={setUser} />} />
 
-            <Route path={"/login"} render={<LoginForm user={user} setUser={setUser} />} />
+            <Route exact path={"/signup"} element={<SignupForm user={user} setUser={setUser} />} />
 
             {/* <Route path={"/me"} render={<Dashboard />} /> */}
 

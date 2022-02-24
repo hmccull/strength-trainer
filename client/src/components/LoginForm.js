@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Col, Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 
 function LoginForm({ setUser }) {
     const [username, setUsername] = useState("");
@@ -32,32 +33,43 @@ function LoginForm({ setUser }) {
 
     return(
         <div id='login'>
+            <Form>
             Login
-            <form onSubmit={handleSubmit}>
-                <input
-                  type='text'
-                  id='username'
-                  placeholder='username'
-                  value={username}
-                  onChange={(e) => setUsername(e.target.value)}
-                />
+            <FormGroup row>
+                <Label for="username" sm={1}>Username</Label>
+                <Col sm={3}>
+                    <Input
+                    type='text'
+                    id='username'
+                    placeholder='username'
+                    value={username}
+                    onChange={(e) => setUsername(e.target.value)}
+                    />
+                </Col>
+            </FormGroup>
+
+            <FormGroup row>
+                <Label for="username" sm={1}>Password</Label>
+                <Col sm={3}>
+                    <Input
+                    type='password'
+                    id='password'
+                    placeholder='password'
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    />
+                </Col>
+            </FormGroup>
+
                 <br />
-                <input
-                  type='password'
-                  id='password'
-                  placeholder='password'
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                />
-                <br />
-                <input 
+                <Button 
                   type='submit'
                   value="Submit"
-                />
+                >Submit</Button>
                 <p>
                     {!!errors ? errors : null}
                 </p>
-            </form>
+            </Form>
         </div>
     )
 }
