@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-// import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import { Col, Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 
 function SignupForm({ user, setUser }) {
     const [username, setUsername] = useState("");
@@ -7,10 +8,12 @@ function SignupForm({ user, setUser }) {
     const [passwordConfirmation, setPasswordConfirmation] = useState("");
     const [gender, setGender] = useState("");
     const [errors, setErrors] = useState([]);
-    // const history = useHistory();
+    const [isLoading, setIsLoading] = useState(false);
+    const navigate = useNavigate();
 
     function handleSubmit(e) {
         e.preventDefault();
+        setIsLoading(true)
 
         fetch("/signup", {
             method: "POST",
@@ -24,14 +27,15 @@ function SignupForm({ user, setUser }) {
                 gender, 
             }),
         }).then((r) => {
+            setIsLoading(false)
             if (r.ok) {
                 r.json().then((user) => {
                     setUser(user)
-                    // history.push("/me")
+                    navigate("/me")
                 });
             } else {
                 r.json().then((err) => {
-                    console.log(err.errors)
+                    setErrors(err.errors)
                 });
             }
         });
@@ -44,49 +48,58 @@ function SignupForm({ user, setUser }) {
     console.log(gender)
 
     return(
-        <div id='login'>
+        <div id='signup'>
             Signup
-            <form onSubmit={handleSubmit}>
-                <input
-                  type='text'
-                  id='username'
-                  placeholder='username'
-                  value={username}
-                  onChange={(e) => setUsername(e.target.value)}
-                />
-                <br />
-                <input
-                  type='password'
-                  id='password'
-                  placeholder='password'
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                />
-                <br />
-                <input
-                  type='password'
-                  id='password_confirmation'
-                  placeholder='password confirmation'
-                  value={passwordConfirmation}
-                  onChange={(e) => setPasswordConfirmation(e.target.value)}
-                />
-                <br />
-                <input
-                  type='text'
-                  id='gender'
-                  placeholder='gender'
-                  value={gender}
-                  onChange={(e) => setGender(e.target.value)}
-                />
-                <br />
-                <input 
-                  type='submit'
-                  value="Submit"
-                />
+            <Form onSubmit={handleSubmit}>
+                <FormGroup row>
+                    <Label for="username" sm={1}>Username</Label>
+                    <Col sm={3}>
+                        <Input
+                        type='text'
+                        id='username'
+                        placeholder='username'
+                        value={username}
+                        onChange={(e) => setUsername(e.target.value)}
+                        />
+                    </Col>
+                </FormGroup>
+
+                <FormGroup row>
+                    <Label for="password" sm={1}>Password</Label>
+                    <Col sm={3}>
+                        <Input
+                        type='password'
+                        id='password'
+                        placeholder='password'
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                        />
+                    </Col>
+                </FormGroup>
+
+                <FormGroup row>
+                    <Label for="password_confirmation" sm={1}>Password Confirmation</Label>
+                    <Col sm={3}>
+                        <Input
+                        type='password'
+                        id='password_confirmation'
+                        placeholder='password confirmation'
+                        value={passwordConfirmation}
+                        onChange={(e) => setPasswordConfirmation(e.target.value)}
+                        />
+                    </Col>
+                </FormGroup>
+
+                <FormGroup check row>
+                    <Col sm={{ size: 15 }}>
+                        <Button>{!isLoading ? "Submit" : "Loading..."}</Button>
+                    </Col>
+                </FormGroup>
+
                 <p>
                     {!!errors ? errors : null}
                 </p>
-            </form>
+            </Form>
         </div>
     )
 }

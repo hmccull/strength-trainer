@@ -8,13 +8,13 @@
 
 puts "Seeding users..."
 
-u1 = User.create!(username: "ghost", password: "ghost", gender: "female")
-u2 = User.create!(username: "brock", password: "brock", gender: "male")
+u1 = User.create!(username: "ghost", password: "ghost")
+u2 = User.create!(username: "brock", password: "brock")
 
 puts "Seeding workouts..."
 
-w1 = Workout.create!(name: "bench", duration: 67, active_calories: 288, date: DateTime.new(2022, 2, 23), user_id: u1.id)
-w2 = Workout.create!(name: "deads", duration: 75, active_calories: 398, date: DateTime.new(2022, 2, 22), user_id: u2.id)
+w1 = Workout.create!(name: "bench", duration: 67, active_calories: 288, body_weight: 125, date: DateTime.new(2022, 2, 23), user_id: u1.id)
+w2 = Workout.create!(name: "deads", duration: 75, active_calories: 398, body_weight: 125, date: DateTime.new(2022, 2, 22), user_id: u2.id)
 
 # w3 = Workout.create!(name: "squats", duration: 78, active_calories: 365, date: DateTime.new(2022, 2, 21), user_id: u1.id)
 
@@ -24,13 +24,13 @@ w2 = Workout.create!(name: "deads", duration: 75, active_calories: 398, date: Da
 
 puts "Seeding cores..."
 
-c4 = Core.create!(name: "bench", reps: 10, lift_weight: 45, body_weight: 125, one_rep_max: 0, workout_id: w1.id)
-c5 = Core.create!(name: "bench", reps: 10, lift_weight: 55, body_weight: 125, one_rep_max: 0, workout_id: w1.id)
-c6 = Core.create!(name: "bench", reps: 10, lift_weight: 65, body_weight: 125, one_rep_max: 0, workout_id: w1.id)
+c4 = Core.create!(name: "bench", reps: 10, lift_weight: 45, workout_id: w1.id)
+c5 = Core.create!(name: "bench", reps: 8, lift_weight: 55, workout_id: w1.id)
+c6 = Core.create!(name: "bench", reps: 6, lift_weight: 65, workout_id: w1.id)
 
-c1 = Core.create!(name: "deadlift", reps: 5, lift_weight: 115, body_weight: 125, one_rep_max: 0, workout_id: w2.id)
-c2 = Core.create!(name: "deadlift", reps: 5, lift_weight: 130, body_weight: 125, one_rep_max: 0, workout_id: w2.id)
-c3 = Core.create!(name: "deadlift", reps: 15, lift_weight: 150, body_weight: 125, one_rep_max: 0, workout_id: w2.id)
+c1 = Core.create!(name: "deadlift", reps: 5, lift_weight: 115, workout_id: w2.id)
+c2 = Core.create!(name: "deadlift", reps: 5, lift_weight: 130, workout_id: w2.id)
+c3 = Core.create!(name: "deadlift", reps: 15, lift_weight: 150, workout_id: w2.id)
 
 puts "Seeding assistance..."
 

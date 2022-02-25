@@ -2,11 +2,12 @@ Rails.application.routes.draw do
   
   resources :assistances
   resources :cores
-  resources :workouts
+  resources :workouts, only: [:index, :show, :create, :destroy]
   resources :users, only: [:index, :show, :create, :destroy]
 
   post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"
+
   post "/signup", to: "users#create"
   get "/me", to: "users#show"
 

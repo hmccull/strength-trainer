@@ -31,8 +31,6 @@ ActiveRecord::Schema.define(version: 2022_02_22_234429) do
     t.string "name"
     t.integer "reps"
     t.integer "lift_weight"
-    t.integer "body_weight"
-    t.integer "one_rep_max"
     t.bigint "workout_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -42,7 +40,6 @@ ActiveRecord::Schema.define(version: 2022_02_22_234429) do
   create_table "users", force: :cascade do |t|
     t.string "username"
     t.string "password_digest"
-    t.string "gender"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -51,6 +48,7 @@ ActiveRecord::Schema.define(version: 2022_02_22_234429) do
     t.string "name"
     t.integer "duration"
     t.integer "active_calories"
+    t.integer "body_weight"
     t.datetime "date"
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false

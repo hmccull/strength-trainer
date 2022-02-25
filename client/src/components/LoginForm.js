@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Col, Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
-import Loading from './Loading';
 
 function LoginForm({ setUser }) {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [errors, setErrors] = useState("");
     const [isLoading, setIsLoading] = useState(false);
+    const navigate = useNavigate();
 
     function handleSubmit(e) {
         e.preventDefault();
@@ -23,6 +24,7 @@ function LoginForm({ setUser }) {
             if (r.ok) {
                 r.json().then((user) => {
                     setUser(user)
+                    navigate("/me")
                 });
             } else {
                 r.json().then((err) => {
@@ -37,36 +39,36 @@ function LoginForm({ setUser }) {
     return(
         <div id='login'>
             <Form onSubmit={handleSubmit}>
-            <FormGroup row>
-                <Label for="username" sm={1}>Username</Label>
-                <Col sm={3}>
-                    <Input
-                    type='text'
-                    id='username'
-                    placeholder='username'
-                    value={username}
-                    onChange={(e) => setUsername(e.target.value)}
-                />
-                </Col>
-            </FormGroup>
-
-            <FormGroup row>
-                <Label for="username" sm={1}>Password</Label>
-                <Col sm={3}>
-                    <Input
-                    type='password'
-                    id='password'
-                    placeholder='password'
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
+                <FormGroup row>
+                    <Label for="username" sm={1}>Username</Label>
+                    <Col sm={3}>
+                        <Input
+                        type='text'
+                        id='username'
+                        placeholder='username'
+                        value={username}
+                        onChange={(e) => setUsername(e.target.value)}
                     />
-                </Col>
-            </FormGroup>
-            <FormGroup row>
-                <Col sm={{ size: 15 }}>
-                    <Button>{!isLoading ? "Submit" : "Loading..."}</Button>
-                </Col>
-            </FormGroup>
+                    </Col>
+                </FormGroup>
+
+                <FormGroup row>
+                    <Label for="username" sm={1}>Password</Label>
+                    <Col sm={3}>
+                        <Input
+                        type='password'
+                        id='password'
+                        placeholder='password'
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                        />
+                    </Col>
+                </FormGroup>
+                <FormGroup row>
+                    <Col sm={{ size: 15 }}>
+                        <Button>{!isLoading ? "Submit" : "Loading..."}</Button>
+                    </Col>
+                </FormGroup>
                 <p>
                     {!!errors ? errors : null}
                 </p>

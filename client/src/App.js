@@ -7,6 +7,7 @@ import LoginForm from './components/LoginForm';
 import Loading from './components/Loading';
 
 import './App.css';
+import AddWorkout from './components/AddWorkout';
 
 
 function App() {
@@ -30,6 +31,8 @@ function App() {
             <Route path={"/login"} element={<LoginForm user={user} setUser={setUser} />} />
 
             <Route exact path={"/signup"} element={<SignupForm user={user} setUser={setUser} />} />
+
+            <Route path={"/new"} element={<AddWorkout user={user} />} />
 
             {/* <Route path={"/me"} render={<Dashboard />} /> */}
 
