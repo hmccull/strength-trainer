@@ -12,7 +12,10 @@ class UsersController < ApplicationController
     end
 
     def show
-        render json: @current_user, include: ['workouts', 'workouts.cores', 'workouts.assistances']
+        user = User.find(session[:user_id])
+        if user
+            render json: user, status: 200
+        end
     end
 
     private 

@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { Nav, Navbar, NavbarBrand, NavItem, NavLink } from 'reactstrap';
 
 function NavigationBar({ user, setUser }) {
@@ -23,8 +22,6 @@ function NavigationBar({ user, setUser }) {
             </NavItem>
         )
     }
-    
-    // add Welcome, user! 
 
     return (
         <div id='nav-bar'>
@@ -41,22 +38,32 @@ function NavigationBar({ user, setUser }) {
                     className="ml-auto"
                     navbar
                 >
+                    {user ? <NavItem>
+                                <NavLink href='/me'>
+                                    Welcome, {user.username}!
+                                </NavLink>
+                            </NavItem> 
+                        : null
+                    }
+
                     {user ? 
                     logOutElement()
-                    :
-                    <NavItem>
-                        <NavLink href="/">
-                            Login
-                        </NavLink>
-                    </NavItem>
+                        :
+                        <NavItem>
+                            <NavLink href="/">
+                                Login
+                            </NavLink>
+                        </NavItem>
                     }
 
                     {!user ? 
-                    <NavItem>
-                        <NavLink href="/signup">
-                            Signup
-                        </NavLink>
-                    </NavItem> : null}
+                        <NavItem>
+                            <NavLink href="/signup">
+                                Signup
+                            </NavLink>
+                        </NavItem> 
+                        : null
+                    }
                 </Nav>
             </Navbar>
         </div>

@@ -3,54 +3,68 @@
 body {
   margin: 0;
   background-color: #282c34;
-  color: #FFFC00;
+  color: #61dafb;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
 }
 
 #root {
+  min-height: 100vh;
   background-color: #282c34;
   color: rgb(36, 36, 36);
   padding: 100px;
+  align-items: center;
+  justify-content: center;
 }
 
 h2, h3 {
   padding-bottom: 10px;
-  color: #FFFC00;
+  color: #61dafb;
 }
 
 #login {
   font-weight: 300;
   font-size: large;
-  color: #FFFC00;
+  color: #61dafb;
   margin-top: 10%;
   margin-left: 40%;
-  margin-bottom: 100%;
 }
 
 #signup {
   font-weight: 500;
   font-size: large;
-  color: #FFFC00;
+  color: #61dafb;
   margin-top: 10%;
   margin-left: 40%;
-  margin-bottom: 100%;
 }
 
 #add-workout {
   font-weight: 500;
   font-size: large;
-  color: #FFFC00;
+  color: #61dafb;
   margin-top: 10%;
   margin-left: 40%;
 }
 
 .divider-home {
-  margin-right: 90%;
+  margin-right: 76.5%;
+  margin-bottom: 30px;
   overflow: hidden;
   display: block;
+  color: #61dafb;
+}
+
+.divider-signup {
+  margin-right: 76.5%;
+  overflow: hidden;
+  display: block;
+  color: #61dafb;
 }
 
 .divider-dash {
-  color: #FFFC00;
+  color: #61dafb;
   overflow: hidden;
   display: block;
 }
@@ -61,9 +75,16 @@ h2, h3 {
   margin-right: 10%;
 }
 
-#dash-welcome {
-  text-align: center;
-  color: aliceblue;
+.recent-row {
+  margin-bottom: 40px;
+}
+
+#add-btn {
+  margin-left: 40%;
+}
+
+#no-account {
+  margin-left: 40%;
 }
 
 

@@ -11,9 +11,9 @@ class SessionsController < ApplicationController
         end
     end
 
-    def show
-        render json: @current_user, include: ['workouts', 'workouts.cores', 'workouts.assistances']
-    end
+    # def show
+    #     render json: @current_user, include: ['workouts', 'workouts.cores', 'workouts.assistances']
+    # end
 
     def destroy
         session.delete :user_id

@@ -2,59 +2,49 @@ import React, { useState, useEffect } from "react";
 import AddWorkout from "./AddWorkout";
 import WorkoutCard from "./WorkoutCard";
 
-import { Row } from 'reactstrap';
+import { Row, Button } from 'reactstrap';
 
 function Dashboard({ user, setUser }) {
     const [workouts, setWorkouts] = useState([]);
     const [updateWorkouts, setUpdateWorkouts] = useState(false);
-    const [recentWorkouts, setRecentWorkouts] = useState([]);
-
-    // useEffect(() => {
-    //     fetch("/me")
-    //     .then(r => r.json())
-    //     .then(userData => {
-    //         setWorkouts(userData.workouts)
-    //         recentWorkoutEl();
-    //     })
-    // }, []);
+    const [addToggle, setAddToggle] = useState(false);
     
     useEffect(() => {
         fetch("/me")
         .then(r => r.json())
         .then(userData => {
             setWorkouts(userData.workouts)
-            recentWorkoutEl();
         })
     }, [updateWorkouts]);
 
-   const recentWorkoutEl = () => {
-       for(let i = 0; i < 5; i++) {
-           workouts.map(w => {
-               setRecentWorkouts([...recentWorkouts, w])
-           })
-       }
-   }
-
     return (
         <div id='dashboard'>
-            <h1 id='dash-welcome'>Welcome back, {user.username}!</h1>
             <br />
             <h2>Recent Workouts</h2>
             <div className='divider-dash'>
                 <hr />
              </div>
             <br />
+            
             <div className='recent-row'>
-                <Row sm={2} md={5}>
-                    {workouts.map(w => (
+                <Row sm={10} md={5}>
+                    {workouts.slice().reverse().slice(0,5).map(w => (
                         <WorkoutCard key={w.id} workout={w} />
-                    ))}
+                        ))}
                 </Row>
             </div>
-            <AddWorkout 
+
+            <Button 
+                id="add-btn" 
+                size="lg" 
+                onClick={() => setAddToggle(!addToggle)}
+            >{!addToggle ? 'Add Workout' : 'Just Kidding'}
+            </Button>
+
+            {addToggle ? <AddWorkout 
                 updateWorkouts={updateWorkouts}
                 setUpdateWorkouts={setUpdateWorkouts}
-            />
+            /> : null}
         </div>
     )
 }
