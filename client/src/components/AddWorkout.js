@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Col, Button, Form, FormGroup, Label, Input } from 'reactstrap';
 
-function AddWorkout({ user }) {
+function AddWorkout({ updateWorkouts, setUpdateWorkouts }) {
     const [name, setName] = useState("");
     const [duration, setDuration] = useState("");
     const [activeCalories, setActiveCalories] = useState("");
@@ -36,23 +36,29 @@ function AddWorkout({ user }) {
             setIsLoading(false)
             if (r.ok) {
                 r.json().then((newWorkout) => {
+                    setUpdateWorkouts(!updateWorkouts);
                     navigate("/me")
                 });
             } else {
                 r.json().then((err) => {
-                    setErrors(err.errors)
+                    setErrors(err.errors);
                 });
             }
         });
+        setName("");
+        setDuration("");
+        setActiveCalories("");
+        setBodyWeight("");
+        setDate("");
     }
 
     return(
         <div id='add-workout'>
-            Add Workout
+           <h2>Add Workout</h2>
             <Form onSubmit={handleSubmit}>
                 <FormGroup row>
-                    <Label for="name" sm={1}>Name</Label>
-                    <Col sm={3}>
+                    <Label for="name">Name</Label>
+                    <Col sm={4}>
                         <Input
                         type='text'
                         id='name'
@@ -64,8 +70,8 @@ function AddWorkout({ user }) {
                 </FormGroup>
 
                 <FormGroup row>
-                    <Label for="duration" sm={1}>Duration</Label>
-                    <Col sm={3}>
+                    <Label for="duration">Duration</Label>
+                    <Col sm={4}>
                         <Input
                         type='number'
                         id='duration'
@@ -77,8 +83,8 @@ function AddWorkout({ user }) {
                 </FormGroup>
 
                 <FormGroup row>
-                    <Label for="active_calories" sm={1}>Active Calories</Label>
-                    <Col sm={3}>
+                    <Label for="active_calories">Active Calories</Label>
+                    <Col sm={4}>
                         <Input
                         type='number'
                         id='active_calories'
@@ -90,8 +96,8 @@ function AddWorkout({ user }) {
                 </FormGroup>
 
                 <FormGroup row>
-                    <Label for="body_weight" sm={1}>Body Weight</Label>
-                    <Col sm={3}>
+                    <Label for="body_weight">Body Weight</Label>
+                    <Col sm={4}>
                         <Input
                         type='number'
                         id='body_weight'
@@ -103,8 +109,8 @@ function AddWorkout({ user }) {
                 </FormGroup>
 
                 <FormGroup row>
-                    <Label for="date" sm={1}>Date</Label>
-                    <Col sm={3}>
+                    <Label for="date">Date</Label>
+                    <Col sm={4}>
                         <Input
                         type='date'
                         id='date'
@@ -114,10 +120,11 @@ function AddWorkout({ user }) {
                         />
                     </Col>
                 </FormGroup>
+                <br />
 
-                <FormGroup check row>
+                <FormGroup row>
                     <Col sm={{ size: 15 }}>
-                        <Button>{!isLoading ? "Add" : "Loading..."}</Button>
+                        <Button>{!isLoading ? "Add Workout" : "Loading..."}</Button>
                     </Col>
                 </FormGroup>
 

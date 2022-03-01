@@ -33,7 +33,6 @@ function NavigationBar({ user, setUser }) {
                 dark
                 expand="md"
                 fixed="top"
-                full
             >
                 <NavbarBrand href="/">
                     Strength Trainer
@@ -46,7 +45,7 @@ function NavigationBar({ user, setUser }) {
                     logOutElement()
                     :
                     <NavItem>
-                        <NavLink href="/login">
+                        <NavLink href="/">
                             Login
                         </NavLink>
                     </NavItem>

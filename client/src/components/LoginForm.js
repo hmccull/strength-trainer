@@ -32,12 +32,11 @@ function LoginForm({ setUser }) {
                 });
             }
         });
-        setUsername("");
-        setPassword("");
     }
 
     return(
         <div id='login'>
+            <h2>Login</h2>
             <Form onSubmit={handleSubmit}>
                 <FormGroup row>
                     <Label for="username" sm={1}>Username</Label>
@@ -64,6 +63,8 @@ function LoginForm({ setUser }) {
                         />
                     </Col>
                 </FormGroup>
+                <br />
+
                 <FormGroup row>
                     <Col sm={{ size: 15 }}>
                         <Button>{!isLoading ? "Submit" : "Loading..."}</Button>
@@ -73,6 +74,7 @@ function LoginForm({ setUser }) {
                     {!!errors ? errors : null}
                 </p>
             </Form>
+            <br />
         </div>
     )
 }

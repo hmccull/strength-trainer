@@ -1,23 +1,69 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css");
+
 body {
   margin: 0;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   background-color: #282c34;
+  color: #FFFC00;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+#root {
+  background-color: #282c34;
+  color: rgb(36, 36, 36);
+  padding: 100px;
+}
+
+h2, h3 {
+  padding-bottom: 10px;
+  color: #FFFC00;
 }
 
 #login {
+  font-weight: 300;
+  font-size: large;
+  color: #FFFC00;
   margin-top: 10%;
+  margin-left: 40%;
+  margin-bottom: 100%;
 }
 
 #signup {
+  font-weight: 500;
+  font-size: large;
+  color: #FFFC00;
   margin-top: 10%;
+  margin-left: 40%;
+  margin-bottom: 100%;
 }
 
 #add-workout {
+  font-weight: 500;
+  font-size: large;
+  color: #FFFC00;
   margin-top: 10%;
+  margin-left: 40%;
 }
+
+.divider-home {
+  margin-right: 90%;
+  overflow: hidden;
+  display: block;
+}
+
+.divider-dash {
+  color: #FFFC00;
+  overflow: hidden;
+  display: block;
+}
+
+#dashboard {
+  margin-top: 4%;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+#dash-welcome {
+  text-align: center;
+  color: aliceblue;
+}
+
+

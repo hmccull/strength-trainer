@@ -49,10 +49,13 @@ function SignupForm({ user, setUser }) {
 
     return(
         <div id='signup'>
-            Signup
+            <h2>Sign Up</h2>
+            <div className='divider'>
+                <hr />
+            </div>
             <Form onSubmit={handleSubmit}>
                 <FormGroup row>
-                    <Label for="username" sm={1}>Username</Label>
+                    <Label for="username">Username</Label>
                     <Col sm={3}>
                         <Input
                         type='text'
@@ -65,7 +68,7 @@ function SignupForm({ user, setUser }) {
                 </FormGroup>
 
                 <FormGroup row>
-                    <Label for="password" sm={1}>Password</Label>
+                    <Label for="password">Password</Label>
                     <Col sm={3}>
                         <Input
                         type='password'
@@ -78,7 +81,7 @@ function SignupForm({ user, setUser }) {
                 </FormGroup>
 
                 <FormGroup row>
-                    <Label for="password_confirmation" sm={1}>Password Confirmation</Label>
+                    <Label for="password_confirmation">Password Confirmation</Label>
                     <Col sm={3}>
                         <Input
                         type='password'
@@ -89,8 +92,9 @@ function SignupForm({ user, setUser }) {
                         />
                     </Col>
                 </FormGroup>
+                <br />
 
-                <FormGroup check row>
+                <FormGroup row>
                     <Col sm={{ size: 15 }}>
                         <Button>{!isLoading ? "Submit" : "Loading..."}</Button>
                     </Col>
