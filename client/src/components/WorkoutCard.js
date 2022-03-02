@@ -1,24 +1,25 @@
 import React, { useState, useEffect } from "react";
 
-import { Card, Col, CardImg, CardBody, CardText } from 'reactstrap';
+import { Card, Col, CardImg, CardBody, CardText, Button } from 'reactstrap';
 
-function WorkoutCard({ workout }) {
+function WorkoutCard({ workout, handleDelete }) {
 
     const { name, duration,  active_calories, body_weight, date } = workout
     
     return (
-        <div className='workout-card'>
+        <div className='workout-cards'>
                 <Col>
-                    <Card>
+                    <Card color='dark' inverse className="workout-card">
                         <CardImg variant='top' src='/deadlift.jpg' />
                         <CardBody>
                             <h4>{name}</h4>
                             <hr />
                             <CardText>
-                                 {active_calories} calories
+                                {active_calories} calories
                                 <br/>
                                 {duration} minutes
                             </CardText>
+                            <Button onClick={(e) => handleDelete(e)}>X</Button>
                         </CardBody>
                     </Card>
                 </Col>

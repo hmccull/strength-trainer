@@ -7,7 +7,6 @@ body {
   min-height: 100vh;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
 }
 
 #root {
@@ -17,6 +16,19 @@ body {
   padding: 100px;
   align-items: center;
   justify-content: center;
+}
+
+#dashboard {
+  margin-top: 4%;
+  margin-left: 10%;
+  margin-right: 10%;
+  align-items: center;
+  justify-content: center;
+}
+
+#home {
+  margin-top: 4%;
+  margin-left: 40%;
 }
 
 h2, h3 {
@@ -29,7 +41,6 @@ h2, h3 {
   font-size: large;
   color: #61dafb;
   margin-top: 10%;
-  margin-left: 40%;
 }
 
 #signup {
@@ -45,7 +56,6 @@ h2, h3 {
   font-size: large;
   color: #61dafb;
   margin-top: 10%;
-  margin-left: 40%;
 }
 
 .divider-home {
@@ -69,22 +79,18 @@ h2, h3 {
   display: block;
 }
 
-#dashboard {
-  margin-top: 4%;
-  margin-left: 10%;
-  margin-right: 10%;
-}
-
 .recent-row {
   margin-bottom: 40px;
 }
 
-#add-btn {
-  margin-left: 40%;
+.activity-card {
+  margin-top: 2%;
+  margin-left: 20%;
+  margin-right: 20%;
+  box-shadow: 1px 1px 10px 2px #fff;
 }
 
-#no-account {
-  margin-left: 40%;
+.workout-card {
+  margin: 10%;
+  box-shadow: 1px 1px 20px 2px #000;
 }
-
-
