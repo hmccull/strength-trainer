@@ -19,7 +19,18 @@ function Dashboard({ user, setUser }) {
 
     return (
         <div id='dashboard'>
+            
+            <div className='divider-dash'>
+                <hr />
+             </div>
+            <h2>Activity</h2>
+            {/* <div id='activity-row'>
+                <ActivityCards workouts={workouts} />
+            </div> */}
             <br />
+            <br />
+            <br />
+            
             <h2>Recent Workouts</h2>
             <div className='divider-dash'>
                 <hr />
