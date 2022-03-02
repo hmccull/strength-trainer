@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Col, Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 
-function LoginForm({ setUser }) {
+function LoginForm({ user, setUser }) {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [errors, setErrors] = useState("");
@@ -29,6 +29,8 @@ function LoginForm({ setUser }) {
             } else {
                 r.json().then((err) => {
                     setErrors(err.errors)
+                    setUsername("");
+                    setPassword("");
                 });
             }
         });
