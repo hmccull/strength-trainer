@@ -17,6 +17,10 @@ function Dashboard({ user, setUser }) {
         })
     }, [updateWorkouts]);
 
+    function handleDeleteWorkout(workout) {
+        console.log('clicked', workout.target);
+    }
+
     return (
         <div id='dashboard'>
             
@@ -30,7 +34,7 @@ function Dashboard({ user, setUser }) {
             <br />
             <br />
             <br />
-            
+
             <h2>Recent Workouts</h2>
             <div className='divider-dash'>
                 <hr />
@@ -40,8 +44,13 @@ function Dashboard({ user, setUser }) {
             <div className='recent-row'>
                 <Row sm={10} md={5}>
                     {workouts.slice().reverse().slice(0,5).map(w => (
-                        <WorkoutCard key={w.id} workout={w} />
-                        ))}
+                        <WorkoutCard 
+                            key={w.id} 
+                            workout={w} 
+                            handleDelete={handleDeleteWorkout} 
+                        />
+                        ))
+                    }
                 </Row>
             </div>
 
