@@ -1,7 +1,6 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Button } from 'reactstrap';
 
-// import SignupForm from './SignupForm';
 import LoginForm from "./LoginForm";
 
 function Home({ user, setUser }) {

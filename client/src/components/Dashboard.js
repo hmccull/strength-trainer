@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from 'react-router-dom';
 import AddWorkout from "./AddWorkout";
 import WorkoutCard from "./WorkoutCard";
 
@@ -8,6 +9,7 @@ function Dashboard({ user, setUser }) {
     const [workouts, setWorkouts] = useState([]);
     const [updateWorkouts, setUpdateWorkouts] = useState(false);
     const [addToggle, setAddToggle] = useState(false);
+    const navigate = useNavigate();
     
     useEffect(() => {
         fetch("/me")
@@ -60,14 +62,9 @@ function Dashboard({ user, setUser }) {
             <Button 
                 id="add-btn" 
                 size="lg" 
-                onClick={() => setAddToggle(!addToggle)}
-            >{!addToggle ? 'Add Workout' : 'Just Kidding'}
+                onClick={() => navigate("/new")}
+            >Add Workout
             </Button>
-
-            {addToggle ? <AddWorkout 
-                updateWorkouts={updateWorkouts}
-                setUpdateWorkouts={setUpdateWorkouts}
-            /> : null}
         </div>
     )
 }

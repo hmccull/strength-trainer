@@ -58,7 +58,7 @@ function AddWorkout({ updateWorkouts, setUpdateWorkouts }) {
             <Form onSubmit={handleSubmit}>
                 <FormGroup row>
                     <Label for="name">Name</Label>
-                    <Col sm={4}>
+                    <Col sm={3}>
                         <Input
                         type='text'
                         id='name'
@@ -71,7 +71,7 @@ function AddWorkout({ updateWorkouts, setUpdateWorkouts }) {
 
                 <FormGroup row>
                     <Label for="duration">Duration</Label>
-                    <Col sm={4}>
+                    <Col sm={3}>
                         <Input
                         type='number'
                         id='duration'
@@ -84,7 +84,7 @@ function AddWorkout({ updateWorkouts, setUpdateWorkouts }) {
 
                 <FormGroup row>
                     <Label for="active_calories">Active Calories</Label>
-                    <Col sm={4}>
+                    <Col sm={3}>
                         <Input
                         type='number'
                         id='active_calories'
@@ -97,7 +97,7 @@ function AddWorkout({ updateWorkouts, setUpdateWorkouts }) {
 
                 <FormGroup row>
                     <Label for="body_weight">Body Weight</Label>
-                    <Col sm={4}>
+                    <Col sm={3}>
                         <Input
                         type='number'
                         id='body_weight'
@@ -110,7 +110,7 @@ function AddWorkout({ updateWorkouts, setUpdateWorkouts }) {
 
                 <FormGroup row>
                     <Label for="date">Date</Label>
-                    <Col sm={4}>
+                    <Col sm={3}>
                         <Input
                         type='date'
                         id='date'
