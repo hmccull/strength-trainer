@@ -1,15 +1,15 @@
-import React from "react";
-// import { Routes, Route } from "react-router-dom";
+import React, { useEffect } from "react";
 import { Button } from 'reactstrap';
 
 // import SignupForm from './SignupForm';
 import LoginForm from "./LoginForm";
 
 function Home({ user, setUser }) {
+
      return (
-         <div>
+         <div id='home'>
              <div id='login-form'>
-                <LoginForm setUser={setUser} />
+                <LoginForm user={user} setUser={setUser} />
              </div>
 
              <div id='no-account'>
@@ -17,7 +17,7 @@ function Home({ user, setUser }) {
                 <hr />
              </div>
                 <h2>No account?</h2>
-                <Button>Sign up</Button> 
+                <Button href='/signup'>Sign up</Button> 
              </div>
          </div>
      )
