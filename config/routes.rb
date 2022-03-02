@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   
-  resources :assistances
-  resources :cores
+  resources :assistances, only: [:index, :show, :create, :destroy]
+  resources :cores, only: [:index, :show, :create, :destroy]
   resources :workouts, only: [:index, :show, :create, :destroy]
   resources :users, only: [:index, :show, :create, :destroy]
 

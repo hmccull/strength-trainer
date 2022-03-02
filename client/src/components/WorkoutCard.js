@@ -4,7 +4,8 @@ import { Card, Col, CardImg, CardBody, CardText, Button } from 'reactstrap';
 
 function WorkoutCard({ workout, handleDelete }) {
 
-    const { name, duration,  active_calories, body_weight, date } = workout
+    const { id, name, duration,  active_calories, body_weight, date } = workout
+    console.log({id})
     
     return (
         <div className='workout-cards'>
@@ -19,7 +20,10 @@ function WorkoutCard({ workout, handleDelete }) {
                                 <br/>
                                 {duration} minutes
                             </CardText>
-                            <Button onClick={(e) => handleDelete(e)}>X</Button>
+                            <Button 
+                                id={id}
+                                onClick={(e) => handleDelete(e, id)}
+                            >X</Button>
                         </CardBody>
                     </Card>
                 </Col>

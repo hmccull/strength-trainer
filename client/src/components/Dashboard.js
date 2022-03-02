@@ -17,8 +17,11 @@ function Dashboard({ user, setUser }) {
         })
     }, [updateWorkouts]);
 
-    function handleDeleteWorkout(workout) {
-        console.log('clicked', workout.target);
+    function handleDeleteWorkout(e, id) {
+        fetch(`/workouts/${id}`, {
+            method: 'DELETE'
+        })
+        setUpdateWorkouts(!updateWorkouts)
     }
 
     return (
