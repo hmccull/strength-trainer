@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from 'react-router-dom';
-import AddWorkout from "./AddWorkout";
+import ActivityCards from "./ActivityCards";
 import WorkoutCard from "./WorkoutCard";
 
 import { Row, Button } from 'reactstrap';
@@ -8,13 +8,13 @@ import { Row, Button } from 'reactstrap';
 function Dashboard({ user, setUser }) {
     const [workouts, setWorkouts] = useState([]);
     const [updateWorkouts, setUpdateWorkouts] = useState(false);
-    const [addToggle, setAddToggle] = useState(false);
     const navigate = useNavigate();
     
     useEffect(() => {
         fetch("/me")
         .then(r => r.json())
         .then(userData => {
+            console.log(userData.workouts)
             setWorkouts(userData.workouts)
         })
     }, [updateWorkouts]);
@@ -23,19 +23,25 @@ function Dashboard({ user, setUser }) {
         fetch(`/workouts/${id}`, {
             method: 'DELETE'
         })
-        setUpdateWorkouts(!updateWorkouts)
+        .then(r => {
+            if (r.ok) {
+                setUpdateWorkouts(!updateWorkouts)
+            }
+        })
     }
 
     return (
         <div id='dashboard'>
             
+            <h2>Activity</h2>
             <div className='divider-dash'>
                 <hr />
-             </div>
-            <h2>Activity</h2>
-            {/* <div id='activity-row'>
+            </div>
+
+            {Object.keys(workouts).length ? <>
+            <div id='activity-row'>
                 <ActivityCards workouts={workouts} />
-            </div> */}
+            </div></> : null}
             <br />
             <br />
             <br />

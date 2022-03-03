@@ -5,7 +5,6 @@ import { Card, Col, CardImg, CardBody, CardText, Button } from 'reactstrap';
 function WorkoutCard({ workout, handleDelete }) {
 
     const { id, name, duration,  active_calories, body_weight, date } = workout
-    console.log({id})
     
     return (
         <div className='workout-cards'>

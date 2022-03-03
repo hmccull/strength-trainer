@@ -19,14 +19,14 @@ class WorkoutsController < ApplicationController
         head :no_content
     end
 
-    def one_rep_max
-        w = find_workout
-        max_lift = w.cores.order(:lift_weight).last
-        weight = max_lift.lift_weight
-        reps = max_lift.reps
-        one_rep_max = weight / (1.0278 - (0.0278 * reps))
-        render json: one_rep_max, status: 201
-    end
+    # def one_rep_max
+    #     w = find_workout
+    #     max_lift = w.cores.order(:lift_weight).last
+    #     weight = max_lift.lift_weight
+    #     reps = max_lift.reps
+    #     one_rep_max = weight / (1.0278 - (0.0278 * reps))
+    #     render json: one_rep_max, status: 201
+    # end
 
     private
 

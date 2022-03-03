@@ -14,8 +14,8 @@ u2 = User.create!(username: "brock", password: "brock")
 puts "Seeding workouts..."
 
 w1 = Workout.create!(name: "Bench", duration: 67, active_calories: 288, body_weight: 125, date: DateTime.new(2022, 2, 23), user_id: u1.id)
-w2 = Workout.create!(name: "Squats", duration: 78, active_calories: 365, date: DateTime.new(2022, 2, 21), user_id: u1.id)
-w3 = Workout.create!(name: "Shoulders", duration: 67, active_calories: 288, date: DateTime.new(2022, 2, 24), user_id: u1.id)
+w2 = Workout.create!(name: "Squats", duration: 78, active_calories: 365, body_weight: 127, date: DateTime.new(2022, 2, 21), user_id: u1.id)
+w3 = Workout.create!(name: "Shoulders", duration: 67, active_calories: 288, body_weight: 123, date: DateTime.new(2022, 2, 24), user_id: u1.id)
 w4 = Workout.create!(name: "deads", duration: 75, active_calories: 398, body_weight: 125, date: DateTime.new(2022, 2, 22), user_id: u1.id)
 
 

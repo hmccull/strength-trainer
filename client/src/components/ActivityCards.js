@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 
 import { Card, Col, CardText, CardTitle, Row } from 'reactstrap';
 
@@ -12,15 +12,18 @@ function ActivityCards({ workouts }) {
         )
     })
     
+    useEffect(() => {
+        console.log(workouts[workouts.length - 1])
+    })
     return (
         <div className='activity-cards'>
             <Row md={4}>
                 <Col sm='6'>
                     <Card body inverse className="activity-card" color='dark'>
                         <CardText>
-                            total calories burned
+                            total calories
                         </CardText>
-                        <CardTitle tag="h5">
+                        <CardTitle align='center' tag="h1">
                         {calorieCount}
                         </CardTitle>
                     </Card>
@@ -31,7 +34,7 @@ function ActivityCards({ workouts }) {
                         <CardText>
                         total workouts
                         </CardText>
-                        <CardTitle tag="h5">
+                        <CardTitle align='center' tag="h1">
                         {workouts.length}
                         </CardTitle>
                     </Card>
@@ -40,10 +43,10 @@ function ActivityCards({ workouts }) {
                 <Col>
                     <Card body inverse className="activity-card" color='dark'>
                         <CardText>
-                        recent weight
+                        recent body weight
                         </CardText>
-                        <CardTitle tag="h5">
-                            {workouts[0].body_weight}
+                        <CardTitle align='center' tag="h1">
+                            {workouts[workouts.length - 1].body_weight}
                         </CardTitle>
                     </Card>
                 </Col>
@@ -51,10 +54,10 @@ function ActivityCards({ workouts }) {
                 <Col>
                     <Card body inverse className="activity-card" color='dark'>
                         <CardText>
-                        recent 1RM
+                        recent ~1RM for {workouts[workouts.length - 1].name} workout
                         </CardText>
-                        <CardTitle tag="h5">
-                            {oneRepMax}
+                        <CardTitle align='center' tag="h1">
+                            {workouts[workouts.length - 1].one_rep_max}
                         </CardTitle>
                     </Card>
                 </Col>
