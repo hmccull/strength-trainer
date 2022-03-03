@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Col, Button, Form, FormGroup, Label, Input } from 'reactstrap';
 
-function AddWorkout({ updateWorkouts, setUpdateWorkouts }) {
+function AddWorkout() {
     const [name, setName] = useState("");
     const [duration, setDuration] = useState("");
     const [activeCalories, setActiveCalories] = useState("");
@@ -36,8 +36,7 @@ function AddWorkout({ updateWorkouts, setUpdateWorkouts }) {
             setIsLoading(false)
             if (r.ok) {
                 r.json().then((newWorkout) => {
-                    setUpdateWorkouts(!updateWorkouts);
-                    navigate("/me")
+                    navigate(`/me/workout/new/${newWorkout.id}/core`)
                 });
             } else {
                 r.json().then((err) => {
@@ -65,6 +64,19 @@ function AddWorkout({ updateWorkouts, setUpdateWorkouts }) {
                         placeholder='name this workout'
                         value={name}
                         onChange={(e) => setName(e.target.value)}
+                        />
+                    </Col>
+                </FormGroup>
+
+                <FormGroup row>
+                    <Label for="date">Date</Label>
+                    <Col sm={3}>
+                        <Input
+                        type='date'
+                        id='date'
+                        placeholder='date'
+                        value={date}
+                        onChange={(e) => setDate(e.target.value)}
                         />
                     </Col>
                 </FormGroup>
@@ -107,20 +119,6 @@ function AddWorkout({ updateWorkouts, setUpdateWorkouts }) {
                         />
                     </Col>
                 </FormGroup>
-
-                <FormGroup row>
-                    <Label for="date">Date</Label>
-                    <Col sm={3}>
-                        <Input
-                        type='date'
-                        id='date'
-                        placeholder='date'
-                        value={date}
-                        onChange={(e) => setDate(e.target.value)}
-                        />
-                    </Col>
-                </FormGroup>
-                <br />
 
                 <FormGroup row>
                     <Col sm={{ size: 15 }}>

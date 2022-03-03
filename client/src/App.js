@@ -9,6 +9,8 @@ import SignupForm from './components/SignupForm';
 
 import Dashboard from './components/Dashboard';
 import AddWorkout from './components/AddWorkout';
+import AddCoreLift from './components/AddCoreLift';
+import AddAssistance from './components/AddAssistance';
 
 
 function App() {
@@ -29,6 +31,10 @@ function App() {
         <Routes>
 
             <Route exact path={"/signup"} element={<SignupForm user={user} setUser={setUser} />} />
+
+            <Route exact path={"/me/workout/new/:id/core"} element={<AddCoreLift user={user} />} />
+
+            <Route exact path={"/me/workout/new/:id/assistance"} element={<AddAssistance user={user} />} />
 
             <Route exact path={"/new"} element={<AddWorkout user={user} />} />
 

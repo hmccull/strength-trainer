@@ -8,7 +8,7 @@ function NavigationBar({ user, setUser }) {
             method: "DELETE"
         }).then((r) => {
             if (r.ok) {
-                setUser(null);
+                setUser({});
             }
         })
     }
