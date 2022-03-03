@@ -59,33 +59,15 @@ function AddAssistance() {
             <Form onSubmit={handleSubmit}>
 
                 <FormGroup row>
-                    <Label for="name">
-                        Assistance Exercise
-                    </Label>
+                    <Label for="name">Name</Label>
                     <Col sm={3}>
                         <Input
-                            id="name"
-                            value={name}
-                            name="select"
-                            type="select"
-                            onChange={(e) => setName(e.target.value)}
-                        >
-                            <option>
-                                select assistance exercise
-                            </option>
-                            <option>
-                                deadlift
-                            </option>
-                            <option>
-                                squat
-                            </option>
-                            <option>
-                                shoulder press
-                            </option>
-                            <option>
-                                bench
-                            </option>
-                        </Input>
+                        type='text'
+                        id='name'
+                        placeholder='name this exercise'
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
+                        />
                     </Col>
                 </FormGroup>
 
@@ -123,15 +105,16 @@ function AddAssistance() {
                     </Label>
                 </FormGroup>
 
+
                 <FormGroup row>
                     <Col sm={{ size: 15 }}>
-                        <Button>{!isLoading ? "Add Core Set" : "Loading..."}</Button>
+                        <Button>Add Assistance Exercises</Button>
                     </Col>
                 </FormGroup>
 
                 <FormGroup row>
                     <Col sm={{ size: 15 }}>
-                        <Button>Add Assistance Exercises</Button>
+                        <Button onClick={() => navigate("/me")}>Workout Complete</Button>
                     </Col>
                 </FormGroup>
 

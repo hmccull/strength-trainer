@@ -44,11 +44,6 @@ function AddWorkout() {
                 });
             }
         });
-        setName("");
-        setDuration("");
-        setActiveCalories("");
-        setBodyWeight("");
-        setDate("");
     }
 
     return(
