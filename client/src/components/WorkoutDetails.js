@@ -58,7 +58,7 @@ function WorkoutDetails({ workout, isToggle, setIsToggle }) {
     });
 
     return (
-        <div className='workout-modal'>
+        <div className='workout-details-container'>
             <h2 id='modal-header'>{name}</h2>
             <br />
 
@@ -167,11 +167,11 @@ function WorkoutDetails({ workout, isToggle, setIsToggle }) {
             </div>
 
             <div className="modal-btns">
-                <Button className="btn">
+                {/* <Button className="btn">
                     Edit
-                </Button>
+                </Button> */}
                 <Button className="-btn" onClick={() => setIsToggle(!isToggle)}>
-                    Cancel
+                    Close
                 </Button>
             </div>
 

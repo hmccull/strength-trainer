@@ -22,7 +22,7 @@ function WorkoutCard({ workout, handleDelete, handleViewClick }) {
                             <Button 
                                 id={id}
                                 onClick={(e) => handleViewClick(e, workout)}
-                            >View/Edit</Button>
+                            >View</Button>
                             <Button 
                                 id={id}
                                 onClick={(e) => handleDelete(e, id)}
