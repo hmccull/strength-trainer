@@ -12,9 +12,6 @@ function ActivityCards({ workouts }) {
         )
     })
     
-    useEffect(() => {
-        console.log(workouts[workouts.length - 1])
-    })
     return (
         <div className='activity-cards'>
             <Row md={4}>

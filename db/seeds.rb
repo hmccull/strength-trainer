@@ -42,9 +42,9 @@ c12 = Core.create!(name: "deadlift", reps: 6, lift_weight: 65, workout_id: w4.id
 
 # --------------------------------------
 
-c1 = Core.create!(name: "deadlift", reps: 5, lift_weight: 115, workout_id: w4.id)
-c2 = Core.create!(name: "deadlift", reps: 5, lift_weight: 130, workout_id: w4.id)
-c3 = Core.create!(name: "deadlift", reps: 15, lift_weight: 150, workout_id: w4.id)
+# c1 = Core.create!(name: "deadlift", reps: 5, lift_weight: 115, workout_id: w4.id)
+# c2 = Core.create!(name: "deadlift", reps: 5, lift_weight: 130, workout_id: w4.id)
+# c3 = Core.create!(name: "deadlift", reps: 15, lift_weight: 150, workout_id: w4.id)
 
 puts "Seeding assistance..."
 

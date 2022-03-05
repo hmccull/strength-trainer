@@ -1,12 +1,10 @@
-@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css");
+/* @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css"); */
 
 body {
   margin: 0;
   background-color: #282c34;
   color: #61dafb;
   min-height: 100vh;
-  align-items: center;
-  justify-content: center;
 }
 
 #root {
@@ -22,18 +20,16 @@ body {
   margin-top: 4%;
   margin-left: 10%;
   margin-right: 10%;
-  align-items: center;
-  justify-content: center;
-}
-
-#home {
-  margin-top: 4%;
-  margin-left: 40%;
 }
 
 h2, h3 {
   padding-bottom: 10px;
   color: #61dafb;
+}
+
+#home {
+  margin-top: 4%;
+  margin-left: 40%;
 }
 
 #login {
@@ -58,6 +54,7 @@ h2, h3 {
   margin-top: 10%;
 }
 
+
 .divider-home {
   margin-right: 76.5%;
   margin-bottom: 30px;
@@ -79,6 +76,7 @@ h2, h3 {
   display: block;
 }
 
+
 .recent-row {
   margin-bottom: 40px;
 }
@@ -92,4 +90,61 @@ h2, h3 {
 .workout-card {
   margin: 10%;
   box-shadow: 1px 1px 20px 2px #000;
+}
+
+
+
+#modal-header {
+  text-align: center;
+}
+
+.workout-modal {
+  background-color: aliceblue;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-bottom: 5%;
+  margin-top: 3%;
+  padding: 40px;
+  border-radius: 15px;
+}
+
+.stats-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.details-container {
+  text-align: center;
+  margin-left: 2%;
+  margin-right: 2%;
+  width: 200px;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 1px 1px 10px 1px #282c34;
+}
+
+.lifts-container {
+  display: flex;
+  margin-top: 5%;
+}
+
+.cores-container {
+  margin-left: 8%;
+  width: 40%;
+}
+
+.assistances-container {
+  margin-left: 5%;
+  margin-right: 8%;
+  width: 40%;
+}
+
+.btn {
+  margin: 10px;
+}
+
+.modal-btns {
+  margin-top: 2%;
+  margin-left: 80%;
 }

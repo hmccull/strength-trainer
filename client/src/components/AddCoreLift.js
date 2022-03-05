@@ -81,7 +81,7 @@ function AddCoreLift() {
                                 shoulder press
                             </option>
                             <option>
-                                bench
+                                bench press
                             </option>
                         </Input>
                     </Col>

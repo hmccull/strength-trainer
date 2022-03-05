@@ -2,19 +2,22 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from 'react-router-dom';
 import ActivityCards from "./ActivityCards";
 import WorkoutCard from "./WorkoutCard";
+import WorkoutDetails from "./WorkoutDetails";
 
 import { Row, Button } from 'reactstrap';
+// import CoreSelect from "./CoreSelect";
 
 function Dashboard({ user, setUser }) {
     const [workouts, setWorkouts] = useState([]);
     const [updateWorkouts, setUpdateWorkouts] = useState(false);
+    const [isToggle, setIsToggle] = useState(false);
+    const [viewWorkout, setViewWorkout] = useState({});
     const navigate = useNavigate();
     
     useEffect(() => {
         fetch("/me")
         .then(r => r.json())
         .then(userData => {
-            console.log(userData.workouts)
             setWorkouts(userData.workouts)
         })
     }, [updateWorkouts]);
@@ -30,8 +33,15 @@ function Dashboard({ user, setUser }) {
         })
     }
 
+    function handleViewClick(e, workout) {
+        setIsToggle(!isToggle)
+        setViewWorkout(workout);
+    }
+
     return (
         <div id='dashboard'>
+
+            {/* <CoreSelect /> */}
             
             <h2>Activity</h2>
             <div className='divider-dash'>
@@ -51,6 +61,8 @@ function Dashboard({ user, setUser }) {
                 <hr />
              </div>
             <br />
+            {isToggle ? 
+                <WorkoutDetails workout={viewWorkout} isToggle={isToggle} setIsToggle={setIsToggle} /> : null}
             
             <div className='recent-row'>
                 <Row sm={10} md={5}>
@@ -59,11 +71,13 @@ function Dashboard({ user, setUser }) {
                             key={w.id} 
                             workout={w} 
                             handleDelete={handleDeleteWorkout} 
+                            handleViewClick={handleViewClick}
                         />
                         ))
                     }
                 </Row>
             </div>
+
 
             <Button 
                 id="add-btn" 

@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 
 import { Card, Col, CardImg, CardBody, CardText, Button } from 'reactstrap';
 
-function WorkoutCard({ workout, handleDelete }) {
+function WorkoutCard({ workout, handleDelete, handleViewClick }) {
 
     const { id, name, duration,  active_calories, body_weight, date } = workout
-    
+
     return (
         <div className='workout-cards'>
                 <Col>
@@ -19,6 +19,10 @@ function WorkoutCard({ workout, handleDelete }) {
                                 <br/>
                                 {duration} minutes
                             </CardText>
+                            <Button 
+                                id={id}
+                                onClick={(e) => handleViewClick(e, workout)}
+                            >View/Edit</Button>
                             <Button 
                                 id={id}
                                 onClick={(e) => handleDelete(e, id)}
