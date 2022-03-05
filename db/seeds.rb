@@ -16,7 +16,7 @@ puts "Seeding workouts..."
 w1 = Workout.create!(name: "Bench", duration: 67, active_calories: 288, body_weight: 125, date: DateTime.new(2022, 2, 23), user_id: u1.id)
 w2 = Workout.create!(name: "Squats", duration: 78, active_calories: 365, body_weight: 127, date: DateTime.new(2022, 2, 21), user_id: u1.id)
 w3 = Workout.create!(name: "Shoulders", duration: 67, active_calories: 288, body_weight: 123, date: DateTime.new(2022, 2, 24), user_id: u1.id)
-w4 = Workout.create!(name: "deads", duration: 75, active_calories: 398, body_weight: 125, date: DateTime.new(2022, 2, 22), user_id: u1.id)
+w4 = Workout.create!(name: "Deads", duration: 75, active_calories: 398, body_weight: 125, date: DateTime.new(2022, 2, 22), user_id: u1.id)
 
 
 # w5 = Workout.create!(name: "deads", duration: 101, active_calories: 400, date: DateTime.new(2022, 2, 22), user_id: u2.id)
@@ -51,6 +51,14 @@ puts "Seeding assistance..."
 a1 = Assistance.create!(name: "push-ups", reps: 10, lift_weight: 10, favorite: true, core_lift: "bench", workout_id: w1.id)
 a2 = Assistance.create!(name: "cable flys", reps: 10, lift_weight: 13, favorite: false, core_lift: "bench", workout_id: w1.id)
 a3 = Assistance.create!(name: "dips", reps: 10, lift_weight: -20, favorite: true, core_lift: "bench", workout_id: w1.id)
+
+a1 = Assistance.create!(name: "leg press", reps: 10, lift_weight: 110, favorite: true, core_lift: "squat", workout_id: w2.id)
+a2 = Assistance.create!(name: "lunges", reps: 10, lift_weight: 20, favorite: false, core_lift: "squat", workout_id: w2.id)
+a3 = Assistance.create!(name: "kickbacks", reps: 10, lift_weight: 35, favorite: true, core_lift: "squat", workout_id: w2.id)
+
+a1 = Assistance.create!(name: "military press", reps: 10, lift_weight: 20, favorite: true, core_lift: "shoulder press", workout_id: w3.id)
+a2 = Assistance.create!(name: "db lat raises", reps: 10, lift_weight: 10, favorite: false, core_lift: "shoulder press", workout_id: w3.id)
+a3 = Assistance.create!(name: "cable high pulls", reps: 10, lift_weight: 80, favorite: true, core_lift: "shoulder press", workout_id: w3.id)
 
 a4 = Assistance.create!(name: "pull-ups", reps: 10, lift_weight: -40, favorite: true, core_lift: "dealift", workout_id: w4.id)
 a5 = Assistance.create!(name: "back extensions", reps: 10, lift_weight: 25, favorite: true, core_lift: "deadlift", workout_id: w4.id)
