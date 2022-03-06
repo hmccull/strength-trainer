@@ -25,9 +25,6 @@ function ActivityCards({ workouts }) {
                         <ReactTooltip id="total-workouts" place="bottom" effect="solid">
                             total workouts
                         </ReactTooltip>
-                        {/* <CardText>
-                            total workouts
-                        </CardText> */}
                         <CardTitle align='center' tag="h1">
                             <IoMdDoneAll className="activity-icon" />
                             <br />
@@ -42,9 +39,6 @@ function ActivityCards({ workouts }) {
                         <ReactTooltip id="total-calories" place="bottom" effect="solid">
                             total calories burned
                         </ReactTooltip>
-                        {/* <CardText>
-                            total calories
-                        </CardText> */}
                         <CardTitle align='center' tag="h1">
                             <AiOutlineFire className="activity-icon" />
                             <br />
@@ -58,9 +52,6 @@ function ActivityCards({ workouts }) {
                         <ReactTooltip id="one-rep-max" place="bottom" effect="solid">
                             recent estimated one-rep-max
                         </ReactTooltip>
-                        {/* <CardText>
-                            recent ~1RM for {workouts[workouts.length - 1].name} workout
-                        </CardText> */}
                         <CardTitle align='center' tag="h1">
                             <GiWeightLiftingUp className="activity-icon" />
                             <br />
@@ -74,9 +65,6 @@ function ActivityCards({ workouts }) {
                         <ReactTooltip id="body-weight" place="bottom" effect="solid">
                             recent body weight
                         </ReactTooltip>
-                        {/* <CardText>
-                            recent body weight
-                        </CardText> */}
                         <CardTitle align='center' tag="h1">
                             <MdOutlineMonitorWeight className="activity-icon" />
                             <br />
