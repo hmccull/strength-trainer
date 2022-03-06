@@ -25,6 +25,8 @@ function App() {
     });
   }, []);
 
+  // if (user) return <Dashboard user={user} setUser={setUser} />
+
   return (
     <div className="app">
       <NavigationBar user={user} setUser={setUser} />

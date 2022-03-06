@@ -11,7 +11,6 @@ class Workout < ApplicationRecord
          weight = max_lift.lift_weight
          reps = max_lift.reps
          "%.2f" % (weight / (1.0278 - (0.0278 * reps)))
-         # render json: one_rep_max, status: 201
       end
    end
    

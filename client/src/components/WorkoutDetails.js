@@ -9,6 +9,8 @@ function WorkoutDetails({ workout, isToggle, setIsToggle }) {
 
     const formatDate = Moment(date).format('MM/DD')
 
+    // get core values
+
     const coreName = cores.map(c => {
         return (
             <div>
@@ -32,6 +34,8 @@ function WorkoutDetails({ workout, isToggle, setIsToggle }) {
             </div>
         )
     });
+
+    // get assistance values
 
     const assistanceName = assistances.map(a => {
         return (

@@ -28,17 +28,17 @@ c4 = Core.create!(name: "bench", reps: 10, lift_weight: 45, workout_id: w1.id)
 c5 = Core.create!(name: "bench", reps: 8, lift_weight: 55, workout_id: w1.id)
 c6 = Core.create!(name: "bench", reps: 6, lift_weight: 65, workout_id: w1.id)
 
-c7 = Core.create!(name: "squat", reps: 10, lift_weight: 45, workout_id: w2.id)
-c8 = Core.create!(name: "squat", reps: 8, lift_weight: 55, workout_id: w2.id)
-c9 = Core.create!(name: "squat", reps: 6, lift_weight: 65, workout_id: w2.id)
+c7 = Core.create!(name: "squat", reps: 10, lift_weight: 95, workout_id: w2.id)
+c8 = Core.create!(name: "squat", reps: 8, lift_weight: 105, workout_id: w2.id)
+c9 = Core.create!(name: "squat", reps: 6, lift_weight: 115, workout_id: w2.id)
 
 c7 = Core.create!(name: "shoulder press", reps: 10, lift_weight: 45, workout_id: w3.id)
-c8 = Core.create!(name: "shoulder press", reps: 8, lift_weight: 55, workout_id: w3.id)
-c9 = Core.create!(name: "shoulder press", reps: 6, lift_weight: 65, workout_id: w3.id)
+c8 = Core.create!(name: "shoulder press", reps: 8, lift_weight: 50, workout_id: w3.id)
+c9 = Core.create!(name: "shoulder press", reps: 6, lift_weight: 55, workout_id: w3.id)
 
-c10 = Core.create!(name: "deadlift", reps: 10, lift_weight: 45, workout_id: w4.id)
-c11 = Core.create!(name: "deadlift", reps: 8, lift_weight: 55, workout_id: w4.id)
-c12 = Core.create!(name: "deadlift", reps: 6, lift_weight: 65, workout_id: w4.id)
+c10 = Core.create!(name: "deadlift", reps: 10, lift_weight: 135, workout_id: w4.id)
+c11 = Core.create!(name: "deadlift", reps: 8, lift_weight: 155, workout_id: w4.id)
+c12 = Core.create!(name: "deadlift", reps: 6, lift_weight: 175, workout_id: w4.id)
 
 # --------------------------------------
 

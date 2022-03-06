@@ -34,7 +34,7 @@ function Dashboard({ user, setUser }) {
     }
 
     function handleViewClick(e, workout) {
-        setIsToggle(!isToggle)
+        setIsToggle(true)
         setViewWorkout(workout);
     }
 
