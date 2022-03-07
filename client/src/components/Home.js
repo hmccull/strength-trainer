@@ -6,7 +6,8 @@ import LoginForm from "./LoginForm";
 function Home({ user, setUser }) {
 
      return (
-         <div id='home'>
+         <div id="hero-img">
+            <div id='home'>
              <div id='login-form'>
                 <LoginForm user={user} setUser={setUser} />
              </div>
@@ -18,6 +19,8 @@ function Home({ user, setUser }) {
                 <h2>No account?</h2>
                 <Button href='/signup'>Sign up</Button> 
              </div>
+
+            </div>
          </div>
      )
 }

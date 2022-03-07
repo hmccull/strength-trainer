@@ -1,5 +1,3 @@
-/* @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css"); */
-
 body {
   margin: 0;
   background-color: #282c34;
@@ -11,13 +9,12 @@ body {
   min-height: 100vh;
   background-color: #282c34;
   color: rgb(36, 36, 36);
-  padding: 100px;
   align-items: center;
   justify-content: center;
 }
 
 #dashboard {
-  margin-top: 4%;
+  padding-top: 4%;
   margin-left: 10%;
   margin-right: 10%;
 }
@@ -28,23 +25,30 @@ h2, h3 {
 }
 
 #home {
-  margin-top: 4%;
-  margin-left: 40%;
+  margin-left: 41%;
+}
+
+#hero-img {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./images/img3.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  min-height: 100vh;
 }
 
 #login {
   font-weight: 300;
   font-size: large;
   color: #61dafb;
-  margin-top: 10%;
+  padding-top: 350px;
 }
 
 #signup {
   font-weight: 500;
   font-size: large;
   color: #61dafb;
-  margin-top: 10%;
-  margin-left: 40%;
+  padding-top: 10%;
+  padding-left: 45%;
 }
 
 #add-workout {
