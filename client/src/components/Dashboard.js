@@ -22,7 +22,7 @@ function Dashboard({ user, setUser }) {
     useEffect(() => {
         fetch("/me")
         .then(r => r.json())
-        .then(userData => {
+        .then(userData => { 
             setWorkouts(userData.workouts)
         })
     }, [updateWorkouts]);

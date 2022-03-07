@@ -19,7 +19,13 @@ body {
   margin-right: 10%;
 }
 
-h2, h3 {
+h2 {
+  padding-bottom: 10px;
+  display: inline;
+  color: #61dafb;
+}
+
+h3 {
   padding-bottom: 10px;
   color: #61dafb;
 }
@@ -58,7 +64,6 @@ h2, h3 {
   margin-top: 10%;
 }
 
-
 .divider-home {
   margin-right: 76.5%;
   margin-bottom: 30px;
@@ -95,8 +100,6 @@ h2, h3 {
   margin: 10%;
   box-shadow: 1px 1px 20px 2px #000;
 }
-
-
 
 #modal-header {
   text-align: center;
