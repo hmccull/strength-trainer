@@ -13,12 +13,6 @@ body {
   justify-content: center;
 }
 
-#dashboard {
-  padding-top: 4%;
-  margin-left: 10%;
-  margin-right: 10%;
-}
-
 h2 {
   padding-bottom: 10px;
   display: inline;
@@ -28,6 +22,14 @@ h2 {
 h3 {
   padding-bottom: 10px;
   color: #61dafb;
+}
+
+#dashboard {
+  clear: both;
+  padding-top: 4%;
+  margin-left: 10%;
+  margin-right: 10%;
+  padding-bottom: 10%;
 }
 
 #home {
@@ -79,12 +81,17 @@ h3 {
   color: #61dafb;
 }
 
+#dashboard-btns {
+  margin-top: 5%;
+  margin-right: 10%;
+  float: right;
+}
+
 .divider-dash {
   color: #61dafb;
   overflow: hidden;
   display: block;
 }
-
 
 .recent-row {
   margin-bottom: 40px;

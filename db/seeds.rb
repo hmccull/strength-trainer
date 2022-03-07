@@ -18,9 +18,9 @@ w2 = Workout.create!(name: "Squats", duration: 78, active_calories: 365, body_we
 w3 = Workout.create!(name: "Shoulders", duration: 67, active_calories: 288, body_weight: 123, date: DateTime.new(2022, 3, 1), user_id: u1.id)
 w4 = Workout.create!(name: "Deads", duration: 75, active_calories: 398, body_weight: 125, date: DateTime.new(2022, 3, 2), user_id: u1.id)
 w5 = Workout.create!(name: "Didn't have fun", duration: 79, active_calories: 398, body_weight: 125, date: DateTime.new(2022, 3, 4), user_id: u1.id)
-w6 = Workout.create!(name: "Ate a lot of bad food", duration: 82, active_calories: 450, body_weight: 128, date: DateTime.new(2022, 3, 7), user_id: u1.id)
-w7 = Workout.create!(name: "Shoulder Deload", duration: 81, active_calories: 212, body_weight: 124, date: DateTime.new(2022, 3, 6), user_id: u1.id)
 w8 = Workout.create!(name: "Deads Deload", duration: 81, active_calories: 248, body_weight: 123, date: DateTime.new(2022, 3, 5), user_id: u1.id)
+w7 = Workout.create!(name: "Shoulder Deload", duration: 81, active_calories: 212, body_weight: 124, date: DateTime.new(2022, 3, 6), user_id: u1.id)
+w6 = Workout.create!(name: "Ate a lot of bad food", duration: 82, active_calories: 450, body_weight: 128, date: DateTime.new(2022, 3, 7), user_id: u1.id)
 
 puts "Seeding cores..."
 

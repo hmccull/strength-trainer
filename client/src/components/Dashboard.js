@@ -48,6 +48,7 @@ function Dashboard({ user, setUser }) {
     function handleThisWeek() {
         setToggleLastWeek(false)
         setToggleThisWeek(!toggleThisWeek)
+
         const todayDate = new Date();
         const startDayOfThisWeek = moment(todayDate).startOf('week');
 
@@ -60,6 +61,7 @@ function Dashboard({ user, setUser }) {
     function handleLastWeek() {
         setToggleThisWeek(false)
         setToggleLastWeek(!toggleLastWeek)
+
         const todayDate = new Date()
         const startDayOfPrevWeek = moment(todayDate).subtract(1, 'week').startOf('week').format('LLLL')
         const lastDayOfPrevWeek = moment(todayDate).subtract(1, 'week').endOf('week').format('LLLL')
@@ -81,6 +83,22 @@ function Dashboard({ user, setUser }) {
     }
 
     return (
+        <>
+            <div id="dashboard-btns">
+                <Button 
+                    id="add-btn" 
+                    size="lg" 
+                    onClick={() => handleThisWeek()}
+                >{toggleThisWeek ? 'View All' : 'View This Week'}
+                </Button>
+
+                <Button 
+                    id="add-btn" 
+                    size="lg" 
+                    onClick={() => handleLastWeek()}
+                >{toggleLastWeek ? 'View All' : 'View Last Week'}
+                </Button>
+            </div>
         <div id='dashboard'>
 
             {/* <CoreSelect /> */}
@@ -92,7 +110,7 @@ function Dashboard({ user, setUser }) {
 
             {Object.keys(workouts).length ? <>
             <div id='activity-row'>
-                <ActivityCards workouts={workouts} />
+                <ActivityCards workouts={workoutsToDiplay()} />
             </div></> : null}
             <br />
             <br />
@@ -101,19 +119,6 @@ function Dashboard({ user, setUser }) {
 
 
             <h2>Recent Workouts</h2>
-            <Button 
-                id="add-btn" 
-                size="lg" 
-                onClick={() => handleThisWeek()}
-            >{toggleThisWeek ? 'View All' : 'View This Week'}
-            </Button>
-
-            <Button 
-                id="add-btn" 
-                size="lg" 
-                onClick={() => handleLastWeek()}
-            >{toggleLastWeek ? 'View All' : 'View Last Week'}
-            </Button>
 
             <div className='divider-dash'>
                 <hr />
@@ -143,6 +148,7 @@ function Dashboard({ user, setUser }) {
             >Add Workout
             </Button>
         </div>
+        </>
     )
 }
 
