@@ -7,7 +7,7 @@ function WorkoutCard({ workout, handleDelete, handleViewClick }) {
 
     const { id, name, duration,  active_calories, date, cores } = workout
 
-    const formatDate = Moment(date).format('MM/DD')
+    const formatDate = Moment(date).format('MM/DD');
 
     const image = () => {
         if (cores[0].name === 'deadlift') {

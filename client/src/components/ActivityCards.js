@@ -7,6 +7,11 @@ import { GiWeightLiftingUp } from 'react-icons/gi';
 import ReactTooltip from "react-tooltip";
 import { Card, Col, CardText, CardTitle, Row } from 'reactstrap';
 
+import BodyWeightChart from "./BodyWeightChart";
+import OneRMChart from "./OneRMChart";
+
+
+
 function ActivityCards({ workouts }) {
     
     // will update on weekly/monthly basis
@@ -73,6 +78,12 @@ function ActivityCards({ workouts }) {
                     </Card>
                 </Col>
             </Row>
+
+            <div id='charts-container'>
+                <BodyWeightChart workouts={workouts} />
+                <OneRMChart workouts={workouts} />                
+            </div>
+            
         </div>
     )
 }

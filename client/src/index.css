@@ -103,6 +103,24 @@ h3 {
   box-shadow: 0px 0px 5px 1px #fff;
 }
 
+#charts-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#body-weight-chart { 
+  text-align: center;
+  margin-top: 20px;
+  margin-right: 60px;
+}
+
+#rep-max-chart {
+  text-align: center;
+  margin-top: 20px;
+  margin-left: 60px;
+}
+
 .workout-card {
   margin: 10%;
   box-shadow: 1px 1px 20px 2px #000;
