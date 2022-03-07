@@ -4,14 +4,19 @@ import ActivityCards from "./ActivityCards";
 import WorkoutCard from "./WorkoutCard";
 import WorkoutDetails from "./WorkoutDetails";
 
+import moment from "moment";
 import { Row, Button } from 'reactstrap';
 // import CoreSelect from "./CoreSelect";
 
 function Dashboard({ user, setUser }) {
     const [workouts, setWorkouts] = useState([]);
     const [updateWorkouts, setUpdateWorkouts] = useState(false);
-    const [isToggle, setIsToggle] = useState(false);
+    const [toggleDetails, setToggleDetails] = useState(false);
     const [viewWorkout, setViewWorkout] = useState({});
+    const [toggleLastWeek, setToggleLastWeek] = useState(false);
+    const [viewLastWeek, setViewLastWeek] = useState([]);
+    const [toggleThisWeek, setToggleThisWeek] = useState(false);
+    const [viewThisWeek, setViewThisWeek] = useState([]);
     const navigate = useNavigate();
     
     useEffect(() => {
@@ -33,9 +38,46 @@ function Dashboard({ user, setUser }) {
         })
     }
 
+    // view workout detail cards
     function handleViewClick(e, workout) {
-        setIsToggle(true)
+        setToggleDetails(true)
         setViewWorkout(workout);
+    }
+
+    // filter workout cards by this week
+    function handleThisWeek() {
+        setToggleLastWeek(false)
+        setToggleThisWeek(!toggleThisWeek)
+        const todayDate = new Date();
+        const startDayOfThisWeek = moment(todayDate).startOf('week');
+
+        const workoutsArr = workouts.filter(w => moment(w.date).isBetween(startDayOfThisWeek, todayDate))
+
+        setViewThisWeek(workoutsArr);
+    }
+
+    // filter workout cards by last week
+    function handleLastWeek() {
+        setToggleThisWeek(false)
+        setToggleLastWeek(!toggleLastWeek)
+        const todayDate = new Date()
+        const startDayOfPrevWeek = moment(todayDate).subtract(1, 'week').startOf('week').format('LLLL')
+        const lastDayOfPrevWeek = moment(todayDate).subtract(1, 'week').endOf('week').format('LLLL')
+
+        const workoutsArr = workouts.filter(w => moment(w.date).isBetween(startDayOfPrevWeek, lastDayOfPrevWeek))
+
+        setViewLastWeek(workoutsArr)
+    }
+
+    // workout cards to display
+    const workoutsToDiplay = () => {
+        if (toggleLastWeek) {
+            return viewLastWeek
+        } else if (toggleThisWeek) {
+            return viewThisWeek
+        } else {
+            return workouts
+        }
     }
 
     return (
@@ -56,17 +98,32 @@ function Dashboard({ user, setUser }) {
             <br />
             <br />
 
+
+
             <h2>Recent Workouts</h2>
+            <Button 
+                id="add-btn" 
+                size="lg" 
+                onClick={() => handleThisWeek()}
+            >{toggleThisWeek ? 'View All' : 'View This Week'}
+            </Button>
+
+            <Button 
+                id="add-btn" 
+                size="lg" 
+                onClick={() => handleLastWeek()}
+            >{toggleLastWeek ? 'View All' : 'View Last Week'}
+            </Button>
+
             <div className='divider-dash'>
                 <hr />
              </div>
             <br />
-            {isToggle ? 
-                <WorkoutDetails workout={viewWorkout} isToggle={isToggle} setIsToggle={setIsToggle} /> : null}
+            {toggleDetails ? <WorkoutDetails workout={viewWorkout} toggleDetails={toggleDetails} setToggleDetails={setToggleDetails} /> : null}
             
             <div className='recent-row'>
                 <Row sm={10} md={5}>
-                    {workouts.slice().reverse().slice(0,10).map(w => (
+                    {workoutsToDiplay().slice().reverse().map(w => (
                         <WorkoutCard 
                             key={w.id} 
                             workout={w} 

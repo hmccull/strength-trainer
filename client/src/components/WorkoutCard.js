@@ -11,7 +11,6 @@ function WorkoutCard({ workout, handleDelete, handleViewClick }) {
 
     const image = () => {
         if (cores[0].name === 'deadlift') {
-            console.log(cores[0].name === 'deadlift')
             return 'https://media.self.com/photos/5c085b17b0213128f1d78b4c/4:3/w_2560%2Cc_limit/woman-deadlifting-barbell.jpg'
         } else if (cores[0].name === 'squat') {
             return 'https://images.ctfassets.net/3s5io6mnxfqz/34Npc5PKLKJi6HIYvFw9XI/3e45754912cf266e7401cb8074c63239/AdobeStock_386146138_2.jpeg?fm=jpg&w=900&fl=progressive'

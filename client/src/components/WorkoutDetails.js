@@ -3,7 +3,7 @@ import React from "react";
 import { Table, Button } from 'reactstrap';
 import Moment from 'moment';
 
-function WorkoutDetails({ workout, isToggle, setIsToggle }) {
+function WorkoutDetails({ workout, toggleDetails, setToggleDetails }) {
 
     const { name, body_weight, date, active_calories, cores, assistances, one_rep_max } = workout;
 
@@ -174,7 +174,7 @@ function WorkoutDetails({ workout, isToggle, setIsToggle }) {
                 {/* <Button className="btn">
                     Edit
                 </Button> */}
-                <Button className="-btn" onClick={() => setIsToggle(!isToggle)}>
+                <Button className="-btn" onClick={() => setToggleDetails(!toggleDetails)}>
                     Close
                 </Button>
             </div>
