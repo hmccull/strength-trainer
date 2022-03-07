@@ -20,7 +20,6 @@ ActiveRecord::Schema.define(version: 2022_02_22_234429) do
     t.integer "reps"
     t.integer "lift_weight"
     t.string "core_lift"
-    t.boolean "favorite"
     t.bigint "workout_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

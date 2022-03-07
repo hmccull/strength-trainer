@@ -5,7 +5,6 @@ class CreateAssistances < ActiveRecord::Migration[6.1]
       t.integer :reps
       t.integer :lift_weight
       t.string :core_lift
-      t.boolean :favorite
       t.belongs_to :workout, null: false, foreign_key: true
 
       t.timestamps

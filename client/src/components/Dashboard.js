@@ -66,7 +66,7 @@ function Dashboard({ user, setUser }) {
             
             <div className='recent-row'>
                 <Row sm={10} md={5}>
-                    {workouts.slice().reverse().slice(0,5).map(w => (
+                    {workouts.slice().reverse().slice(0,10).map(w => (
                         <WorkoutCard 
                             key={w.id} 
                             workout={w} 
