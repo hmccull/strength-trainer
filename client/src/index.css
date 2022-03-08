@@ -111,6 +111,18 @@ body::-webkit-scrollbar {
   display: block;
 }
 
+#divider-footer-top {
+  margin-left: 47%;
+  margin-right: 47%;
+  margin-bottom: 40px;
+}
+
+#divider-footer-bottom {
+  margin-left: 47%;
+  margin-right: 47%;
+  margin-top: 40px;
+}
+
 /* * charts */
 
 #body-weight-chart { 
@@ -187,6 +199,15 @@ body::-webkit-scrollbar {
   width: 40%;
 }
 
+#footer-container {
+  padding: 125px;
+  text-align: center;
+  border-top-style: solid;
+  border-top-color: #fff;
+  border-top-width: 1px;
+  color: aliceblue;
+}
+
 /* #select-cards-container {
   text-align: center;
 } */
@@ -220,6 +241,11 @@ body::-webkit-scrollbar {
 h3 {
   padding-bottom: 10px;
   color: #61dafb;
+}
+
+#footer-text {
+  font-weight: 100;
+  font-size: large;
 }
 
 .dash-header {
