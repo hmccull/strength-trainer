@@ -23,16 +23,16 @@ function Home({ user, setUser }) {
                         {!isToggled ? <LoginForm user={user} setUser={setUser} /> : <SignupForm user={user} setUser={setUser} />}
                      </div>
 
-                     <div id='no-account'>
-                     <div className='divider-home'>
-                        <hr />
-                     </div>
+                     <div id='no-account-container'>
+                        <div className='divider-home'>
+                           <hr />
+                        </div>
                         <h2 className="login-signup-header">{!isToggled ? 'No account?' : 'Already signed up?'}</h2>
                         <Button onClick={handleClick}>{!isToggled ? 'Sign up' : 'Login'}</Button> 
                      </div>
                   </FadeIn>
                </div>
-               
+
          </div>
      )
 }

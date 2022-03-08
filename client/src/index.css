@@ -39,6 +39,9 @@ body::-webkit-scrollbar {
   margin-left: 35%;
 }
 
+#no-account-container {
+}
+
 .activity-row-container {
   margin-bottom: 150px;
 }
