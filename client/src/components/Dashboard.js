@@ -98,6 +98,13 @@ function Dashboard({ user, setUser }) {
                     onClick={() => handleLastWeek()}
                 >{toggleLastWeek ? 'View All' : 'View Last Week'}
                 </Button>
+
+                <Button 
+                    id="add-btn" 
+                    size="lg" 
+                    onClick={() => navigate("/new")}
+                >Add Workout
+                </Button>
             </div>
         <div id='dashboard'>
 
@@ -140,13 +147,6 @@ function Dashboard({ user, setUser }) {
                 </Row>
             </div>
 
-
-            <Button 
-                id="add-btn" 
-                size="lg" 
-                onClick={() => navigate("/new")}
-            >Add Workout
-            </Button>
         </div>
         </>
     )
