@@ -1,11 +1,11 @@
-import React, { useEffect } from "react";
+import React from "react";
 
 import { AiOutlineFire  } from 'react-icons/ai';
 import { IoMdDoneAll } from 'react-icons/io';
 import { MdOutlineMonitorWeight } from 'react-icons/md';
 import { GiWeightLiftingUp } from 'react-icons/gi';
 import ReactTooltip from "react-tooltip";
-import { Card, Col, CardText, CardTitle, Row } from 'reactstrap';
+import { Card, Col, CardTitle, Row } from 'reactstrap';
 
 import BodyWeightChart from "./BodyWeightChart";
 import OneRMChart from "./OneRMChart";

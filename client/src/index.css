@@ -66,6 +66,22 @@ h3 {
   margin-top: 10%;
 }
 
+#select-cards-container {
+  text-align: center;
+}
+
+#select-cards {
+  display: flex;
+  max-width: 75%;
+  margin-left: 12%;
+  margin-right: 12%;
+}
+
+.select-card {
+  margin: 20px;
+  box-shadow: 1px 1px 20px 2px #000;
+}
+
 .divider-home {
   margin-right: 76.5%;
   margin-bottom: 30px;

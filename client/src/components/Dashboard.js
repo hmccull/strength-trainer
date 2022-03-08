@@ -6,7 +6,7 @@ import WorkoutDetails from "./WorkoutDetails";
 
 import moment from "moment";
 import { Row, Button } from 'reactstrap';
-// import CoreSelect from "./CoreSelect";
+import CoreSelect from "./CoreSelect";
 
 function Dashboard({ user, setUser }) {
     const [workouts, setWorkouts] = useState([]);
