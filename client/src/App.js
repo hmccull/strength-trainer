@@ -26,17 +26,10 @@ function App() {
     });
   }, []);
 
-  
-  
-  // {!user ? navigate("/") : navigate("/me")}
-  // if (!user) return <Home user={user} setUser={setUser} />;
-
   return (
     <div className="app">
       <NavigationBar user={user} setUser={setUser} />
         <Routes>
-
-            {/* <Route exact path={"/signup"} element={<SignupForm user={user} setUser={setUser} />} /> */}
 
             <Route exact path={"/me/workout/new/:id/core"} element={<AddCoreLift user={user} />} />
 

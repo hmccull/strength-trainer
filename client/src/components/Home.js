@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { Button } from 'reactstrap';
 
 import LoginForm from "./LoginForm";
-import NavigationBar from "./NavigationBar";
 import SignupForm from "./SignupForm";
 
 function Home({ user, setUser }) {

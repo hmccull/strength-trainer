@@ -50,7 +50,7 @@ function SignupForm({ user, setUser }) {
     return(
         <div id='signup'>
             <h2>Sign Up</h2>
-            <div className='divider-signup'>
+            <div className='divider-form'>
                 <hr />
             </div>
             <Form onSubmit={handleSubmit}>

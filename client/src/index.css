@@ -42,6 +42,7 @@ h3 {
   background-position: center;
   background-size: cover;
   min-height: 100vh;
+  min-width: 100vw;
 }
 
 #login, #signup {
@@ -82,7 +83,7 @@ h3 {
   color: #61dafb;
 }
 
-.divider-signup {
+.divider-form {
   margin-right: 76.5%;
   overflow: hidden;
   display: block;

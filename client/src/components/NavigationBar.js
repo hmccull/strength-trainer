@@ -31,7 +31,7 @@ function NavigationBar({ user, setUser }) {
                 expand="md"
                 fixed="top"
             >
-                <NavbarBrand href="/">
+                <NavbarBrand>
                     Strength Trainer
                 </NavbarBrand>
                 <Nav

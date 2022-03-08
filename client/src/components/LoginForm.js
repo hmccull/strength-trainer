@@ -39,7 +39,7 @@ function LoginForm({ user, setUser }) {
     return(
         <div id='login'>
             <h2>Login</h2>
-            <div className='divider-signup'>
+            <div className='divider-form'>
                 <hr />
             </div>
             <Form onSubmit={handleSubmit}>
