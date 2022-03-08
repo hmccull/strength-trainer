@@ -100,7 +100,7 @@ function WorkoutDetails({ workout, toggleDetails, setToggleDetails }) {
                     <Table
                         hover
                         responsive
-                        size=""
+                        bordered
                     >
                         <thead>
                             <tr>
@@ -121,7 +121,7 @@ function WorkoutDetails({ workout, toggleDetails, setToggleDetails }) {
                                 <th scope="row">
                                     {coreName}
                                 </th>
-                                <td scope="row">
+                                <td>
                                     {coreWeight}
                                 </td>
                                 <td>
@@ -136,7 +136,7 @@ function WorkoutDetails({ workout, toggleDetails, setToggleDetails }) {
                     <Table
                         hover
                         responsive
-                        size=""
+                        bordered
                     >
                         <thead>
                             <tr>
@@ -157,7 +157,7 @@ function WorkoutDetails({ workout, toggleDetails, setToggleDetails }) {
                                 <th scope="row">
                                     {assistanceName}
                                 </th>
-                                <td scope="row">
+                                <td>
                                     {assistanceWeight}
                                 </td>
                                 <td>

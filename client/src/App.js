@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { Routes, Route, useNavigate } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
 // import Loading from './components/Loading';
 
 import NavigationBar from './components/NavigationBar';
 import Home from './components/Home';
-import SignupForm from './components/SignupForm';
 
 import Dashboard from './components/Dashboard';
 import AddWorkout from './components/AddWorkout';
@@ -16,7 +15,6 @@ import AddAssistance from './components/AddAssistance';
 function App() {
   const [user, setUser] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
-  const navigate = useNavigate();
 
   useEffect(() => {
     fetch("/me").then((r) => {

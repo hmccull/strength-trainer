@@ -6,7 +6,6 @@ import WorkoutDetails from "./WorkoutDetails";
 
 import moment from "moment";
 import { Row, Button } from 'reactstrap';
-import CoreSelect from "./CoreSelect";
 
 function Dashboard({ user, setUser }) {
     const [workouts, setWorkouts] = useState([]);
@@ -107,8 +106,6 @@ function Dashboard({ user, setUser }) {
                 </Button>
             </div>
         <div id='dashboard'>
-
-            {/* <CoreSelect /> */}
             
             <h2>Activity</h2>
             <div className='divider-dash'>

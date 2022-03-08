@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Col, Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+import { Col, Button, Form, FormGroup, Label, Input } from 'reactstrap';
 
 function LoginForm({ user, setUser }) {
     const [username, setUsername] = useState("");
