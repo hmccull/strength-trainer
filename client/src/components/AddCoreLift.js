@@ -52,83 +52,85 @@ function AddCoreLift() {
     }
 
     return(
-        <div id='add-workout'>
-           <h2>Add Core Lift</h2>
-            <Form onSubmit={handleSubmit}>
+        <div className='workout-container'>
+            <div className='add-workout'>
+                <h2>Add Core Lift</h2>
+                <Form onSubmit={handleSubmit}>
 
-                <FormGroup row>
-                    <Label for="core-name">
-                        Core Lift
-                    </Label>
-                    <Col sm={3}>
-                        <Input
-                            id="core-name"
-                            value={name}
-                            name="select"
-                            type="select"
-                            onChange={(e) => setName(e.target.value)}
-                        >
-                            <option>
-                                select core lift
-                            </option>
-                            <option>
-                                deadlift
-                            </option>
-                            <option>
-                                squat
-                            </option>
-                            <option>
-                                shoulder press
-                            </option>
-                            <option>
-                                bench press
-                            </option>
-                        </Input>
-                    </Col>
-                </FormGroup>
+                    <FormGroup row>
+                        <Label for="core-name">
+                            Core Lift
+                        </Label>
+                        <Col sm={3}>
+                            <Input
+                                id="core-name"
+                                value={name}
+                                name="select"
+                                type="select"
+                                onChange={(e) => setName(e.target.value)}
+                            >
+                                <option>
+                                    select core lift
+                                </option>
+                                <option>
+                                    deadlift
+                                </option>
+                                <option>
+                                    squat
+                                </option>
+                                <option>
+                                    shoulder press
+                                </option>
+                                <option>
+                                    bench press
+                                </option>
+                            </Input>
+                        </Col>
+                    </FormGroup>
 
-                <FormGroup row>
-                    <Label for="reps">Reps</Label>
-                    <Col sm={3}>
-                        <Input
-                        type='number'
-                        id='reps'
-                        placeholder='# of reps'
-                        value={reps}
-                        onChange={(e) => setReps(e.target.value)}
-                        />
-                    </Col>
-                </FormGroup>
+                    <FormGroup row>
+                        <Label for="reps">Reps</Label>
+                        <Col sm={3}>
+                            <Input
+                            type='number'
+                            id='reps'
+                            placeholder='# of reps'
+                            value={reps}
+                            onChange={(e) => setReps(e.target.value)}
+                            />
+                        </Col>
+                    </FormGroup>
 
-                <FormGroup row>
-                    <Label for="weight">Weight</Label>
-                    <Col sm={3}>
-                        <Input
-                        type='number'
-                        id='weight'
-                        placeholder='set weight in lbs.'
-                        value={liftWeight}
-                        onChange={(e) => setLiftWeight(e.target.value)}
-                        />
-                    </Col>
-                </FormGroup>
+                    <FormGroup row>
+                        <Label for="weight">Weight</Label>
+                        <Col sm={3}>
+                            <Input
+                            type='number'
+                            id='weight'
+                            placeholder='set weight in lbs.'
+                            value={liftWeight}
+                            onChange={(e) => setLiftWeight(e.target.value)}
+                            />
+                        </Col>
+                    </FormGroup>
 
-                <FormGroup row>
-                    <Col sm={{ size: 15 }}>
-                        <Button>{!isLoading ? "Add Core Set" : "Loading..."}</Button>
-                    </Col>
-                </FormGroup>
+                    <FormGroup row>
+                        <Col sm={{ size: 15 }}>
+                            <Button>{!isLoading ? "Add Core Set" : "Loading..."}</Button>
+                        </Col>
+                    </FormGroup>
 
-                <FormGroup row>
-                    <Col sm={{ size: 15 }}>
-                        <Button onClick={handleAssistanceClick}>Add Assistance Exercises</Button>
-                    </Col>
-                </FormGroup>
+                    <FormGroup row>
+                        <Col sm={{ size: 15 }}>
+                            <Button onClick={handleAssistanceClick}>Add Assistance Exercises</Button>
+                        </Col>
+                    </FormGroup>
 
-                {errors.map((err) => (
-                    <p key={err}>{err}</p>
-                ))}
-            </Form>
+                    {errors.map((err) => (
+                        <p key={err}>{err}</p>
+                    ))}
+                </Form>
+            </div>
         </div>
     )
 }

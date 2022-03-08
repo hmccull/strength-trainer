@@ -47,7 +47,8 @@ function AddWorkout() {
     }
 
     return(
-        <div id='add-workout'>
+        <div className='workout-container'>
+            <div className='add-workout'>
            <h2>Add Workout</h2>
             <Form onSubmit={handleSubmit}>
                 <FormGroup row>
@@ -125,6 +126,7 @@ function AddWorkout() {
                     <p key={err}>{err}</p>
                 ))}
             </Form>
+            </div>
         </div>
     )
 }

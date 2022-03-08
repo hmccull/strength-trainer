@@ -3,6 +3,13 @@ body {
   background-color: #282c34;
   color: #61dafb;
   min-height: 100vh;
+  -ms-overflow-style: none; /* for Internet Explorer, Edge */
+  scrollbar-width: none; /* for Firefox */
+  overflow-y: scroll;
+}
+
+body::-webkit-scrollbar {
+  display: none; /* for Chrome, Safari, and Opera */
 }
 
 #root {
@@ -52,11 +59,16 @@ h3 {
   padding-top: 350px;
 }
 
-#add-workout {
+.workout-container {
+  margin-left: 42%;
+  min-height: 100vh;
+}
+
+.add-workout {
   font-weight: 500;
   font-size: large;
   color: #61dafb;
-  margin-top: 10%;
+  padding-top: 20%;
 }
 
 #select-cards-container {
