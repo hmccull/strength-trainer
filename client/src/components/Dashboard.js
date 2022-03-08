@@ -107,22 +107,17 @@ function Dashboard({ user, setUser }) {
             </div>
         <div id='dashboard'>
             
-            <h2>Activity</h2>
+            <h2 className="dash-header">Activity</h2>
             <div className='divider-dash'>
                 <hr />
             </div>
 
             {Object.keys(workouts).length ? <>
-            <div id='activity-row'>
+            <div className='activity-row-container'>
                 <ActivityCards workouts={workoutsToDiplay()} />
             </div></> : null}
-            <br />
-            <br />
-            <br />
 
-
-
-            <h2>Recent Workouts</h2>
+            <h2 className="dash-header">Recent Workouts</h2>
 
             <div className='divider-dash'>
                 <hr />
@@ -130,7 +125,7 @@ function Dashboard({ user, setUser }) {
             <br />
             {toggleDetails ? <WorkoutDetails workout={viewWorkout} toggleDetails={toggleDetails} setToggleDetails={setToggleDetails} /> : null}
             
-            <div className='recent-row'>
+            <div className='recent-row-container'>
                 <Row sm={10} md={5}>
                     {workoutsToDiplay().slice().reverse().map(w => (
                         <WorkoutCard 

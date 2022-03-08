@@ -63,7 +63,7 @@ function WorkoutDetails({ workout, toggleDetails, setToggleDetails }) {
 
     return (
         <div className='workout-details-container'>
-            <h2 id='modal-header'>{name}</h2>
+            <h2 className='details-header'>{name}</h2>
             <br />
 
             <div className="stats-container">
@@ -170,11 +170,11 @@ function WorkoutDetails({ workout, toggleDetails, setToggleDetails }) {
 
             </div>
 
-            <div className="modal-btns">
+            <div className="details-btn">
                 {/* <Button className="btn">
                     Edit
                 </Button> */}
-                <Button className="-btn" onClick={() => setToggleDetails(!toggleDetails)}>
+                <Button onClick={() => setToggleDetails(!toggleDetails)}>
                     Close
                 </Button>
             </div>

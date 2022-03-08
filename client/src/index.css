@@ -3,14 +3,18 @@ body {
   background-color: #282c34;
   color: #61dafb;
   min-height: 100vh;
+  /* remove scrollbar */
   -ms-overflow-style: none; /* for Internet Explorer, Edge */
   scrollbar-width: none; /* for Firefox */
   overflow-y: scroll;
 }
 
 body::-webkit-scrollbar {
+  /* remove scrollbar */
   display: none; /* for Chrome, Safari, and Opera */
 }
+
+/*  * page components */
 
 #root {
   min-height: 100vh;
@@ -18,17 +22,6 @@ body::-webkit-scrollbar {
   color: rgb(36, 36, 36);
   align-items: center;
   justify-content: center;
-}
-
-h2 {
-  padding-bottom: 10px;
-  display: inline;
-  color: #61dafb;
-}
-
-h3 {
-  padding-bottom: 10px;
-  color: #61dafb;
 }
 
 #dashboard {
@@ -43,6 +36,8 @@ h3 {
   margin-left: 41%;
 }
 
+/* * images */
+
 #hero-img {
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./images/img3.jpg');
   background-repeat: no-repeat;
@@ -52,16 +47,13 @@ h3 {
   min-width: 100vw;
 }
 
+/* * forms */
+
 #login, #signup {
   font-weight: 300;
   font-size: large;
   color: #61dafb;
   padding-top: 350px;
-}
-
-.workout-container {
-  margin-left: 42%;
-  min-height: 100vh;
 }
 
 .add-workout {
@@ -71,21 +63,32 @@ h3 {
   padding-top: 20%;
 }
 
-#select-cards-container {
-  text-align: center;
-}
+/* * cards */
 
-#select-cards {
-  display: flex;
-  max-width: 75%;
-  margin-left: 12%;
-  margin-right: 12%;
+.activity-card {
+  margin: 15%;
+  margin-top: 10%;
+  box-shadow: 0px 0px 5px 1px #fff;
 }
 
 .select-card {
   margin: 20px;
   box-shadow: 1px 1px 20px 2px #000;
 }
+
+.workout-card {
+  margin: 10%;
+  box-shadow: 1px 1px 20px 2px #000;
+}
+
+/* #select-cards {
+  display: flex;
+  max-width: 75%;
+  margin-left: 12%;
+  margin-right: 12%;
+} */
+
+/* * dividers */
 
 .divider-home {
   margin-right: 76.5%;
@@ -102,33 +105,13 @@ h3 {
   color: #61dafb;
 }
 
-#dashboard-btns {
-  margin-top: 5%;
-  margin-right: 10%;
-  float: right;
-}
-
 .divider-dash {
   color: #61dafb;
   overflow: hidden;
   display: block;
 }
 
-.recent-row {
-  margin-bottom: 40px;
-}
-
-.activity-card {
-  margin: 15%;
-  margin-top: 10%;
-  box-shadow: 0px 0px 5px 1px #fff;
-}
-
-#charts-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+/* * charts */
 
 #body-weight-chart { 
   text-align: center;
@@ -142,13 +125,25 @@ h3 {
   margin-left: 60px;
 }
 
-.workout-card {
-  margin: 10%;
-  box-shadow: 1px 1px 20px 2px #000;
+/* * containers */
+
+.activity-row-container {
+  margin-bottom: 150px;
 }
 
-#modal-header {
-  text-align: center;
+.recent-row-container {
+  margin-bottom: 40px;
+}
+
+#charts-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.workout-container {
+  margin-left: 42%;
+  min-height: 100vh;
 }
 
 .workout-details-container {
@@ -179,31 +174,61 @@ h3 {
 }
 
 .lifts-container {
-  display: flex;
   margin-top: 5%;
 }
 
 .cores-container {
-  margin-left: 8%;
+  margin-left: 30%;
   width: 40%;
 }
 
 .assistances-container {
-  margin-left: 5%;
-  margin-right: 8%;
+  margin-left: 30%;
   width: 40%;
 }
+
+/* #select-cards-container {
+  text-align: center;
+} */
+
+/* * buttons */
 
 .btn {
   margin: 10px;
 }
 
-.modal-btns {
+.details-btn {
   margin-top: 2%;
-  margin-left: 80%;
+  margin-left: 94%;
 }
+
+#dashboard-btns {
+  margin-top: 5%;
+  margin-right: 10%;
+  float: right;
+}
+
+/* * icons */
 
 .activity-icon {
   margin-bottom: 20px;
   margin-top: 20px;
+}
+
+/* * text */
+
+h3 {
+  padding-bottom: 10px;
+  color: #61dafb;
+}
+
+.dash-header {
+  padding-bottom: 10px;
+  display: inline;
+  color: #61dafb;
+}
+
+.details-header {
+  text-align: center;
+  color: #61dafb;
 }
