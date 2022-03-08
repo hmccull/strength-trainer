@@ -1,5 +1,9 @@
 class Workout < ApplicationRecord
   validates :name, presence: true, uniqueness: { scope: :user_id }
+  validates :date, presence: true
+  validates :duration, presence: true
+  validates :active_calories, presence: true
+  validates :body_weight, presence: true
   
   belongs_to :user
   has_many :cores, dependent: :destroy

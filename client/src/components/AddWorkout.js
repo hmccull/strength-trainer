@@ -121,9 +121,9 @@ function AddWorkout() {
                     </Col>
                 </FormGroup>
 
-                <p>
-                    {!!errors ? errors : null}
-                </p>
+                {errors.map((err) => (
+                    <p key={err}>{err}</p>
+                 ))}
             </Form>
         </div>
     )
