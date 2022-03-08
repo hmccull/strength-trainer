@@ -6,7 +6,6 @@ function SignupForm({ user, setUser }) {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [passwordConfirmation, setPasswordConfirmation] = useState("");
-    const [gender, setGender] = useState("");
     const [errors, setErrors] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
     const navigate = useNavigate();
@@ -24,7 +23,6 @@ function SignupForm({ user, setUser }) {
                 username, 
                 password,
                 password_confirmation: passwordConfirmation,
-                gender, 
             }),
         }).then((r) => {
             setIsLoading(false)
@@ -42,14 +40,11 @@ function SignupForm({ user, setUser }) {
         setUsername("");
         setPassword("");
         setPasswordConfirmation("");
-        setGender("");
     }
-
-    console.log(gender)
 
     return(
         <div id='signup'>
-            <h2>Sign Up</h2>
+            <h2 className='login-signup-header'>Sign Up</h2>
             <div className='divider-form'>
                 <hr />
             </div>

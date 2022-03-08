@@ -38,7 +38,7 @@ function LoginForm({ user, setUser }) {
 
     return(
         <div id='login'>
-            <h2>Login</h2>
+            <h2 className="login-signup-header">Login</h2>
             <div className='divider-form'>
                 <hr />
             </div>

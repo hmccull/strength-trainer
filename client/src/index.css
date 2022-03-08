@@ -32,112 +32,12 @@ body::-webkit-scrollbar {
   padding-bottom: 10%;
 }
 
-#home {
-  margin-left: 41%;
-}
-
-/* * images */
-
-#hero-img {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./images/img3.jpg');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  min-height: 100vh;
-  min-width: 100vw;
-}
-
-/* * forms */
-
-#login, #signup {
-  font-weight: 300;
-  font-size: large;
-  color: #61dafb;
-  padding-top: 350px;
-}
-
-.add-workout {
-  font-weight: 500;
-  font-size: large;
-  color: #61dafb;
-  padding-top: 20%;
-}
-
-/* * cards */
-
-.activity-card {
-  margin: 15%;
-  margin-top: 10%;
-  box-shadow: 0px 0px 5px 1px #fff;
-}
-
-.select-card {
-  margin: 20px;
-  box-shadow: 1px 1px 20px 2px #000;
-}
-
-.workout-card {
-  margin: 10%;
-  box-shadow: 1px 1px 20px 2px #000;
-}
-
-/* #select-cards {
-  display: flex;
-  max-width: 75%;
-  margin-left: 12%;
-  margin-right: 12%;
-} */
-
-/* * dividers */
-
-.divider-home {
-  margin-right: 76.5%;
-  margin-bottom: 30px;
-  overflow: hidden;
-  display: block;
-  color: #61dafb;
-}
-
-.divider-form {
-  margin-right: 76.5%;
-  overflow: hidden;
-  display: block;
-  color: #61dafb;
-}
-
-.divider-dash {
-  color: #61dafb;
-  overflow: hidden;
-  display: block;
-}
-
-#divider-footer-top {
-  margin-left: 47%;
-  margin-right: 47%;
-  margin-bottom: 40px;
-}
-
-#divider-footer-bottom {
-  margin-left: 47%;
-  margin-right: 47%;
-  margin-top: 40px;
-}
-
-/* * charts */
-
-#body-weight-chart { 
-  text-align: center;
-  margin-top: 20px;
-  margin-right: 60px;
-}
-
-#rep-max-chart {
-  text-align: center;
-  margin-top: 20px;
-  margin-left: 60px;
-}
-
 /* * containers */
+
+#forms-container {
+  margin-right: -60%;
+  margin-left: 35%;
+}
 
 .activity-row-container {
   margin-bottom: 150px;
@@ -212,6 +112,72 @@ body::-webkit-scrollbar {
   text-align: center;
 } */
 
+/* * images */
+
+#hero-img {
+  background-image: linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.75)), url('./images/img3.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  min-height: 100vh;
+  min-width: 100vw;
+}
+
+/* * forms */
+
+#login, #signup {
+  font-weight: 300;
+  font-size: large;
+  color: #61dafb;
+  padding-top: 50px;
+}
+
+.add-workout {
+  font-weight: 500;
+  font-size: large;
+  color: #61dafb;
+  padding-top: 20%;
+}
+
+/* * cards */
+
+.activity-card {
+  margin: 15%;
+  margin-top: 10%;
+  box-shadow: 0px 0px 5px 1px #fff;
+}
+
+.select-card {
+  margin: 20px;
+  box-shadow: 1px 1px 20px 2px #000;
+}
+
+.workout-card {
+  margin: 10%;
+  box-shadow: 1px 1px 20px 2px #000;
+}
+
+/* #select-cards {
+  display: flex;
+  max-width: 75%;
+  margin-left: 12%;
+  margin-right: 12%;
+} */
+
+/* * charts */
+
+#body-weight-chart { 
+  text-align: center;
+  margin-top: 20px;
+  margin-right: 60px;
+}
+
+#rep-max-chart {
+  text-align: center;
+  margin-top: 20px;
+  margin-left: 60px;
+}
+
 /* * buttons */
 
 .btn {
@@ -243,20 +209,69 @@ h3 {
   color: #61dafb;
 }
 
+#home-header {
+  padding-top: 200px;
+  text-align: center;
+  font-weight: 200;
+  color: aliceblue;
+}
+
+.login-signup-header {
+  color: #61dafb;
+  font-weight: 200;
+}
+
 #footer-text {
   font-weight: 100;
   font-size: large;
 }
 
 .dash-header {
+  font-weight: 200;
   padding-bottom: 10px;
   display: inline;
   color: #61dafb;
 }
 
 .details-header {
+  font-weight: 200;
   padding-top: 15px;
   padding-bottom: 20px;
   text-align: center;
   color: #61dafb;
+}
+
+/* * dividers */
+
+.divider-home {
+  margin-right: 75.5%;
+  margin-bottom: 30px;
+  overflow: hidden;
+  display: block;
+  color: #61dafb;
+}
+
+.divider-form {
+  margin-right: 75.5%;
+  overflow: hidden;
+  display: block;
+  color: #61dafb;
+}
+
+.divider-dash {
+  color: #61dafb;
+  overflow: hidden;
+  display: block;
+}
+
+#divider-footer-top {
+  margin-left: 47%;
+  margin-right: 47%;
+  margin-bottom: 40px;
+}
+
+#divider-footer-bottom {
+  margin-left: 47%;
+  margin-right: 47%;
+  margin-top: 40px;
 }
