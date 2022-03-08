@@ -98,9 +98,7 @@ function WorkoutDetails({ workout, toggleDetails, setToggleDetails }) {
             <div className="lifts-container">
                 <div className='cores-container'>
                     <Table
-                        hover
                         responsive
-                        bordered
                     >
                         <thead>
                             <tr>
@@ -134,9 +132,7 @@ function WorkoutDetails({ workout, toggleDetails, setToggleDetails }) {
 
                 <div className='assistances-container'>
                     <Table
-                        hover
                         responsive
-                        bordered
                     >
                         <thead>
                             <tr>

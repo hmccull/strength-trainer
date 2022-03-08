@@ -148,8 +148,8 @@ body::-webkit-scrollbar {
 
 .workout-details-container {
   background-color: aliceblue;
-  margin-left: 10%;
-  margin-right: 10%;
+  margin-left: 15%;
+  margin-right: 15%;
   margin-bottom: 5%;
   margin-top: 3%;
   padding: 40px;
@@ -229,6 +229,8 @@ h3 {
 }
 
 .details-header {
+  padding-top: 15px;
+  padding-bottom: 20px;
   text-align: center;
   color: #61dafb;
 }
