@@ -13,7 +13,7 @@ function WorkoutDetails({ workout, toggleDetails, setToggleDetails }) {
 
     const coreName = cores.map(c => {
         return (
-            <div>
+            <div key={c.name}>
                 {c.name}
             </div>
         )
@@ -21,7 +21,7 @@ function WorkoutDetails({ workout, toggleDetails, setToggleDetails }) {
 
     const coreWeight = cores.map(c => {
         return (
-            <div>
+            <div key={c.id}>
                 {c.lift_weight}
             </div>
         )
@@ -29,7 +29,7 @@ function WorkoutDetails({ workout, toggleDetails, setToggleDetails }) {
 
     const coreReps = cores.map(c => {
         return (
-            <div>
+            <div key={coreName.id}>
                 {c.reps}
             </div>
         )
@@ -39,7 +39,7 @@ function WorkoutDetails({ workout, toggleDetails, setToggleDetails }) {
 
     const assistanceName = assistances.map(a => {
         return (
-            <div className="assistance-names">
+            <div key={a.name}>
                 {a.name}
             </div>
         )
@@ -47,7 +47,7 @@ function WorkoutDetails({ workout, toggleDetails, setToggleDetails }) {
 
     const assistanceWeight = assistances.map(a => {
         return (
-            <div>
+            <div key={a.id}>
                 {a.lift_weight}
             </div>
         )
@@ -55,7 +55,7 @@ function WorkoutDetails({ workout, toggleDetails, setToggleDetails }) {
     
     const assistanceReps = assistances.map(a => {
         return (
-            <div>
+            <div key={a.id}>
                 {a.reps}
             </div>
         )
