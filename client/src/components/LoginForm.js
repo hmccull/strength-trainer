@@ -39,9 +39,12 @@ function LoginForm({ user, setUser }) {
     return(
         <div id='login'>
             <h2>Login</h2>
+            <div className='divider-signup'>
+                <hr />
+            </div>
             <Form onSubmit={handleSubmit}>
                 <FormGroup row>
-                    <Label for="username" sm={1}>Username</Label>
+                    <Label for="username">Username</Label>
                     <Col sm={3}>
                         <Input
                         type='text'
@@ -54,7 +57,7 @@ function LoginForm({ user, setUser }) {
                 </FormGroup>
 
                 <FormGroup row>
-                    <Label for="username" sm={1}>Password</Label>
+                    <Label for="username">Password</Label>
                     <Col sm={3}>
                         <Input
                         type='password'

@@ -19,7 +19,7 @@ function OneRMChart({ workouts }) {
         <BarChart width={800} height={300} data={data}>
           <XAxis dataKey="core_lift" stroke="#61dafb" />
           <YAxis />
-          <Tooltip wrapperStyle={{ width: 200, backgroundColor: '#61dafb' }} />
+          <Tooltip wrapperStyle={{ width: 200 }} />
           <CartesianGrid stroke="#ccc" />
           <Bar dataKey="one_rep_max" fill="#61dafb" barSize={30} />
         </BarChart>

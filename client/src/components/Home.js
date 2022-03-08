@@ -1,23 +1,30 @@
-import React from "react";
+import React, { useState } from "react";
 import { Button } from 'reactstrap';
 
 import LoginForm from "./LoginForm";
+import NavigationBar from "./NavigationBar";
+import SignupForm from "./SignupForm";
 
 function Home({ user, setUser }) {
+   const [isToggled, setIsToggled] = useState(false);
+
+   function handleClick() {
+      setIsToggled(!isToggled);
+   }
 
      return (
          <div id="hero-img">
             <div id='home'>
              <div id='login-form'>
-                <LoginForm user={user} setUser={setUser} />
+                {!isToggled ? <LoginForm user={user} setUser={setUser} /> : <SignupForm user={user} setUser={setUser} />}
              </div>
 
              <div id='no-account'>
              <div className='divider-home'>
                 <hr />
              </div>
-                <h2>No account?</h2>
-                <Button href='/signup'>Sign up</Button> 
+                <h2>{!isToggled ? 'No account?' : 'Already signed up?'}</h2>
+                <Button onClick={handleClick}>{!isToggled ? 'Sign up' : 'Login'}</Button> 
              </div>
 
             </div>

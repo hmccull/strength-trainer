@@ -44,19 +44,11 @@ h3 {
   min-height: 100vh;
 }
 
-#login {
+#login, #signup {
   font-weight: 300;
   font-size: large;
   color: #61dafb;
   padding-top: 350px;
-}
-
-#signup {
-  font-weight: 500;
-  font-size: large;
-  color: #61dafb;
-  padding-top: 10%;
-  padding-left: 45%;
 }
 
 #add-workout {

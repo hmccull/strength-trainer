@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useNavigate } from "react-router-dom";
 
 // import Loading from './components/Loading';
 
@@ -16,6 +16,7 @@ import AddAssistance from './components/AddAssistance';
 function App() {
   const [user, setUser] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetch("/me").then((r) => {
@@ -25,14 +26,17 @@ function App() {
     });
   }, []);
 
-  // if (user) return <Dashboard user={user} setUser={setUser} />
+  
+  
+  // {!user ? navigate("/") : navigate("/me")}
+  // if (!user) return <Home user={user} setUser={setUser} />;
 
   return (
     <div className="app">
       <NavigationBar user={user} setUser={setUser} />
         <Routes>
 
-            <Route exact path={"/signup"} element={<SignupForm user={user} setUser={setUser} />} />
+            {/* <Route exact path={"/signup"} element={<SignupForm user={user} setUser={setUser} />} /> */}
 
             <Route exact path={"/me/workout/new/:id/core"} element={<AddCoreLift user={user} />} />
 

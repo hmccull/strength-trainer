@@ -47,21 +47,7 @@ function NavigationBar({ user, setUser }) {
                     }
 
                     {user ? 
-                    logOutElement()
-                        :
-                        <NavItem>
-                            <NavLink href="/">
-                                Login
-                            </NavLink>
-                        </NavItem>
-                    }
-
-                    {!user ? 
-                        <NavItem>
-                            <NavLink href="/signup">
-                                Signup
-                            </NavLink>
-                        </NavItem> 
+                        logOutElement()
                         : null
                     }
                 </Nav>
