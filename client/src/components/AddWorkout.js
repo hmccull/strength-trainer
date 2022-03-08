@@ -123,7 +123,7 @@ function AddWorkout() {
 
                 {errors.map((err) => (
                     <p key={err}>{err}</p>
-                 ))}
+                ))}
             </Form>
         </div>
     )
