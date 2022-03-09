@@ -5,7 +5,6 @@ import { Routes, Route } from "react-router-dom";
 
 import NavigationBar from './components/NavigationBar';
 import Home from './components/Home';
-import Footer from './components/Footer';
 
 import Dashboard from './components/Dashboard';
 import AddWorkout from './components/AddWorkout';
@@ -15,7 +14,6 @@ import AddAssistance from './components/AddAssistance';
 
 function App() {
   const [user, setUser] = useState(null);
-  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     fetch("/me").then((r) => {
@@ -41,7 +39,6 @@ function App() {
             <Route exact path={"/"} element={<Home user={user} setUser={setUser} />} />
 
         </Routes>
-      {/* <Footer /> */}
     </div>
   );
 }

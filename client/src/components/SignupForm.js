@@ -95,9 +95,9 @@ function SignupForm({ user, setUser }) {
                     </Col>
                 </FormGroup>
 
-                <p>
-                    {!!errors ? errors : null}
-                </p>
+                    {errors.length > 0 ? errors.map((err) => (
+                        <p key={err}>{err}</p>
+                    )) : null}
             </Form>
         </div>
     )
