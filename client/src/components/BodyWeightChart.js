@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Moment from 'moment';
-import { LineChart, Line, CartesianGrid, XAxis, YAxis, Tooltip } from 'recharts';
+import { LineChart, Line, CartesianGrid, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts';
 
 function BodyWeightChart({ workouts }) {
 
@@ -15,13 +15,15 @@ function BodyWeightChart({ workouts }) {
     }
 
     const renderLineChart = (
-    <LineChart width={800} height={300} data={data}>
+    <ResponsiveContainer aspect={5}>
+    <LineChart data={data}>
         <Line type="monotone" dataKey="body_weight" stroke="#61dafb" />
         <CartesianGrid stroke="#ccc" />
         <XAxis dataKey="date" />
-        <YAxis dataKey='body_weight' />
+        <YAxis dataKey='body_weight' domain={[50, 175]} />
         <Tooltip />
     </LineChart>
+    </ResponsiveContainer>
     );
 
     return (

@@ -88,8 +88,10 @@ function ActivityCards({ workouts }) {
             </Row>
 
             <FadeIn delay={800} transitionDuration={2000}>
-                <div id='charts-container'>
+                <div className='charts-container'>
                     <BodyWeightChart workouts={workouts} />
+                </div>
+                <div className='charts-container'>
                     <OneRMChart workouts={workouts} />        
                 </div>
             </FadeIn>        

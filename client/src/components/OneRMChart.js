@@ -1,5 +1,5 @@
 import React from 'react';
-import { BarChart, Bar, XAxis, YAxis, Tooltip, CartesianGrid } from 'recharts';
+import { BarChart, Bar, XAxis, YAxis, Tooltip, CartesianGrid, ResponsiveContainer } from 'recharts';
 
 import Moment from 'moment';
 
@@ -16,13 +16,15 @@ function OneRMChart({ workouts }) {
     }
 
     const renderBarChart = (
-        <BarChart width={800} height={300} data={data}>
-          <XAxis dataKey="core_lift" stroke="#61dafb" />
-          <YAxis type='number' domain={[50, 275]} />
-          <Tooltip wrapperStyle={{ width: 200 }} />
-          <CartesianGrid stroke="#ccc" />
-          <Bar dataKey="one_rep_max" fill="#61dafb" barSize={30} />
-        </BarChart>
+        <ResponsiveContainer aspect={4}>
+            <BarChart data={data}>
+                <XAxis dataKey="core_lift" stroke="#61dafb" />
+                <YAxis type='number' domain={[45, 275]} />
+                <Tooltip wrapperStyle={{ width: 200 }} />
+                <CartesianGrid stroke="#ccc" />
+                <Bar dataKey="one_rep_max" fill="#61dafb" barSize={30} />
+            </BarChart>
+        </ResponsiveContainer>
       );
 
     return (
