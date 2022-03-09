@@ -18,7 +18,7 @@ body::-webkit-scrollbar {
 
 #root {
   min-height: 99vh;
-  min-width: 99vh;
+  min-width: 99vw;
   background-color: #282c34;
   color: rgb(36, 36, 36);
   align-items: center;
@@ -52,7 +52,7 @@ body::-webkit-scrollbar {
 .charts-container {
   margin-left: 15%;
   margin-right: 15%;
-  max-width: 99vh;
+  max-width: 99vw;
 }
 
 .workout-container {
@@ -192,7 +192,7 @@ body::-webkit-scrollbar {
 }
 
 #dashboard-btns {
-  margin-top: 5%;
+  padding-top: 6%;
   margin-right: 10%;
   float: right;
 }

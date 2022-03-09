@@ -32,7 +32,7 @@ function ActivityCards({ workouts }) {
                             <ReactTooltip id="total-workouts" place="bottom" effect="solid">
                                 total workouts
                             </ReactTooltip>
-                            <CardTitle align='center' tag="h1">
+                            <CardTitle align='center' tag="h2">
                                 <IoMdDoneAll className="activity-icon" />
                                 <br />
                                 {workouts.length}
@@ -47,7 +47,7 @@ function ActivityCards({ workouts }) {
                             <ReactTooltip id="total-calories" place="bottom" effect="solid">
                                 total calories burned
                             </ReactTooltip>
-                            <CardTitle align='center' tag="h1">
+                            <CardTitle align='center' tag="h2">
                                 <AiOutlineFire className="activity-icon" />
                                 <br />
                                 {calorieCount}
@@ -62,7 +62,7 @@ function ActivityCards({ workouts }) {
                             <ReactTooltip id="one-rep-max" place="bottom" effect="solid">
                                 recent estimated one-rep-max
                             </ReactTooltip>
-                            <CardTitle align='center' tag="h1">
+                            <CardTitle align='center' tag="h2">
                                 <GiWeightLiftingUp className="activity-icon" />
                                 <br />
                                 {workouts[workouts.length - 1].one_rep_max} lbs.
@@ -77,7 +77,7 @@ function ActivityCards({ workouts }) {
                             <ReactTooltip id="body-weight" place="bottom" effect="solid">
                                 recent body weight
                             </ReactTooltip>
-                            <CardTitle align='center' tag="h1">
+                            <CardTitle align='center' tag="h2">
                                 <MdOutlineMonitorWeight className="activity-icon" />
                                 <br />
                                 {workouts[workouts.length - 1].body_weight} lbs.
