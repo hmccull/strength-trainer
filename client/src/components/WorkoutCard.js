@@ -2,6 +2,7 @@ import React from "react";
 
 import { Card, Col, CardImg, CardBody, CardText, Button } from 'reactstrap';
 import Moment from 'moment';
+import FadeIn from 'react-fade-in';
 
 function WorkoutCard({ workout, handleDelete, handleViewClick }) {
 
@@ -23,6 +24,7 @@ function WorkoutCard({ workout, handleDelete, handleViewClick }) {
 
     return (
         <div className='workout-cards'>
+            <FadeIn delay={1500} transitionDuration={3000}>
                 <Col>
                     <Card color='dark' inverse className="workout-card">
                         <CardImg variant='top' src={image()} width='150px' height='175px' />
@@ -47,6 +49,7 @@ function WorkoutCard({ workout, handleDelete, handleViewClick }) {
                         </CardBody>
                     </Card>
                 </Col>
+            </FadeIn>
         </div>
     )
 }

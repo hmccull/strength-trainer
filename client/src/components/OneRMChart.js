@@ -18,7 +18,7 @@ function OneRMChart({ workouts }) {
     const renderBarChart = (
         <BarChart width={800} height={300} data={data}>
           <XAxis dataKey="core_lift" stroke="#61dafb" />
-          <YAxis />
+          <YAxis type='number' domain={[50, 275]} />
           <Tooltip wrapperStyle={{ width: 200 }} />
           <CartesianGrid stroke="#ccc" />
           <Bar dataKey="one_rep_max" fill="#61dafb" barSize={30} />
@@ -27,7 +27,7 @@ function OneRMChart({ workouts }) {
 
     return (
         <div id='rep-max-chart'>
-            <h3>~1RM</h3>
+            <h3 className='chart-titles'>~ One-Rep Max</h3>
             {renderBarChart}
         </div>
     )

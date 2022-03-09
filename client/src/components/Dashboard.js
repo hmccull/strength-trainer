@@ -105,6 +105,7 @@ function Dashboard({ user, setUser }) {
                 >Add Workout
                 </Button>
             </div>
+            
         <div id='dashboard'>
             
             <h2 className="dash-header">Activity</h2>
@@ -112,10 +113,11 @@ function Dashboard({ user, setUser }) {
                 <hr />
             </div>
 
-            {Object.keys(workouts).length ? <>
-            <div className='activity-row-container'>
-                <ActivityCards workouts={workoutsToDiplay()} />
-            </div></> : null}
+            {Object.keys(workouts).length ? 
+                <><div className='activity-row-container'>
+                    <ActivityCards workouts={workoutsToDiplay()} />
+                </div></> : null
+            }
 
             <h2 className="dash-header">Recent Workouts</h2>
 
@@ -123,7 +125,10 @@ function Dashboard({ user, setUser }) {
                 <hr />
              </div>
             <br />
-            {toggleDetails ? <WorkoutDetails workout={viewWorkout} toggleDetails={toggleDetails} setToggleDetails={setToggleDetails} /> : null}
+            {toggleDetails ? 
+                <WorkoutDetails workout={viewWorkout} toggleDetails={toggleDetails} setToggleDetails={setToggleDetails} /> 
+                : null
+            }
             
             <div className='recent-row-container'>
                 <Row sm={10} md={5}>

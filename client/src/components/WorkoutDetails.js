@@ -2,6 +2,7 @@ import React from "react";
 
 import { Table, Button } from 'reactstrap';
 import Moment from 'moment';
+import FadeIn from 'react-fade-in';
 
 function WorkoutDetails({ workout, toggleDetails, setToggleDetails }) {
 
@@ -62,7 +63,10 @@ function WorkoutDetails({ workout, toggleDetails, setToggleDetails }) {
     });
 
     return (
+        <FadeIn transitionDuration={1500}>
         <div className='workout-details-container'>
+
+            <FadeIn delay={350} transitionDuration={1500}>
             <h2 className='details-header'>{name}</h2>
             <br />
 
@@ -91,11 +95,11 @@ function WorkoutDetails({ workout, toggleDetails, setToggleDetails }) {
                     <br />
                     ~1RM
                 </div>
-
             </div>
-
+            </FadeIn>
 
             <div className="lifts-container">
+            <FadeIn delay={450} transitionDuration={1500}>
                 <div className='cores-container'>
                     <Table
                         responsive
@@ -129,7 +133,9 @@ function WorkoutDetails({ workout, toggleDetails, setToggleDetails }) {
                         </tbody>
                     </Table>
                 </div>
+            </FadeIn>
 
+            <FadeIn delay={600} transitionDuration={1500}>
                 <div className='assistances-container'>
                     <Table
                         responsive
@@ -163,6 +169,7 @@ function WorkoutDetails({ workout, toggleDetails, setToggleDetails }) {
                         </tbody>
                     </Table>
                 </div>
+            </FadeIn>
 
             </div>
 
@@ -176,6 +183,7 @@ function WorkoutDetails({ workout, toggleDetails, setToggleDetails }) {
             </div>
 
         </div>
+        </FadeIn>
     )
 }
 

@@ -26,7 +26,7 @@ function ActivityCards({ workouts }) {
     return (
         <div className='activity-cards'>
             <Row md={4}>
-                <FadeIn delay={100} transitionDuration={2000}>
+                <FadeIn transitionDuration={2000}>
                     <Col>
                         <Card body inverse className="activity-card" color='dark' data-tip data-for="total-workouts">
                             <ReactTooltip id="total-workouts" place="bottom" effect="solid">

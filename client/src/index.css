@@ -14,7 +14,7 @@ body::-webkit-scrollbar {
   display: none; /* for Chrome, Safari, and Opera */
 }
 
-/*  * page components */
+/*  * pages */
 
 #root {
   min-height: 100vh;
@@ -39,8 +39,6 @@ body::-webkit-scrollbar {
   margin-left: 35%;
 }
 
-#no-account-container {
-}
 
 .activity-row-container {
   margin-bottom: 150px;
@@ -98,17 +96,19 @@ body::-webkit-scrollbar {
 }
 
 .assistances-container {
+  margin-top: 25px;
   margin-left: 30%;
   width: 40%;
 }
 
 #footer-container {
-  padding: 100px;
-  text-align: center;
+  padding: 75px;
   border-top-style: solid;
   border-top-color: #fff;
   border-top-width: 1px;
+  background-color: #212529;
   color: aliceblue;
+  text-align: center;
 }
 
 /* #select-cards-container {
@@ -189,7 +189,7 @@ body::-webkit-scrollbar {
 
 .details-btn {
   margin-top: 2%;
-  margin-left: 94%;
+  margin-left: 93%;
 }
 
 #dashboard-btns {
@@ -207,9 +207,10 @@ body::-webkit-scrollbar {
 
 /* * text */
 
-h3 {
-  padding-bottom: 10px;
+.chart-titles {
+  padding-bottom: 20px;
   color: #61dafb;
+  font-weight: 200;
 }
 
 #home-header {
@@ -271,10 +272,12 @@ h3 {
   margin-left: 47%;
   margin-right: 47%;
   margin-bottom: 40px;
+  color: #61dafb;
 }
 
 #divider-footer-bottom {
   margin-left: 47%;
   margin-right: 47%;
   margin-top: 40px;
+  color: #61dafb;
 }

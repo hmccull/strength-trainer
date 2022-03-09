@@ -26,7 +26,7 @@ function BodyWeightChart({ workouts }) {
 
     return (
         <div id="body-weight-chart">
-            <h3>Body Weight</h3>
+            <h3 className='chart-titles'>Body Weight</h3>
             {renderLineChart}
         </div>
     )
