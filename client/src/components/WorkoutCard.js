@@ -24,7 +24,7 @@ function WorkoutCard({ workout, handleDelete, handleViewClick }) {
 
     return (
         <div className='workout-cards'>
-            <FadeIn delay={1500} transitionDuration={3000}>
+            <FadeIn delay={1000} transitionDuration={2000}>
                 <Col>
                     <Card color='dark' inverse className="workout-card">
                         <CardImg variant='top' src={image()} width='150px' height='175px' />

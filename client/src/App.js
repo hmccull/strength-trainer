@@ -26,7 +26,7 @@ function App() {
   }, []);
 
   return (
-    <div className="app">
+    <div id="app">
       <NavigationBar user={user} setUser={setUser} />
         <Routes>
 
@@ -41,7 +41,7 @@ function App() {
             <Route exact path={"/"} element={<Home user={user} setUser={setUser} />} />
 
         </Routes>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }
