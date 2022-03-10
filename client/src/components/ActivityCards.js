@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import { AiOutlineFire  } from 'react-icons/ai';
 import { IoMdDoneAll } from 'react-icons/io';
@@ -15,6 +15,9 @@ import CaloriesChart from "./CaloriesChart";
 
 
 function ActivityCards({ workouts }) {
+    const [bodyToggle, setBodyToggle] = useState(false);
+    const [calorieToggle, setCalorieToggle] = useState(false);
+    const [oneRepToggle, setOneRepToggle] = useState(false);
     
     // will update on weekly/monthly basis
     let calorieCount = 0;
@@ -31,7 +34,7 @@ function ActivityCards({ workouts }) {
                     <Col>
                         <Card body inverse className="activity-card" color='dark' data-tip data-for="total-workouts">
                             <ReactTooltip id="total-workouts" place="bottom" effect="solid">
-                                total workouts
+                                workouts completed
                             </ReactTooltip>
                             <CardTitle align='center' tag="h2">
                                 <IoMdDoneAll className="activity-icon" />
@@ -44,7 +47,7 @@ function ActivityCards({ workouts }) {
 
                 <FadeIn delay={300} transitionDuration={2000}>
                     <Col>
-                        <Card body inverse className="activity-card" color='dark' data-tip data-for="total-calories">
+                        <Card body inverse className="activity-card" color='dark' data-tip data-for="total-calories" onClick={() => setCalorieToggle(!calorieToggle)}>
                             <ReactTooltip id="total-calories" place="bottom" effect="solid">
                                 total calories burned
                             </ReactTooltip>
@@ -59,7 +62,7 @@ function ActivityCards({ workouts }) {
 
                 <FadeIn delay={500} transitionDuration={2000}>
                     <Col>
-                        <Card body inverse className="activity-card" color='dark' data-tip data-for="one-rep-max">
+                        <Card body inverse className="activity-card" color='dark' data-tip data-for="one-rep-max" onClick={() => setOneRepToggle(!oneRepToggle)}>
                             <ReactTooltip id="one-rep-max" place="bottom" effect="solid">
                                 recent estimated one-rep-max
                             </ReactTooltip>
@@ -74,7 +77,7 @@ function ActivityCards({ workouts }) {
 
                 <FadeIn delay={700} transitionDuration={2000}>
                     <Col>
-                        <Card body inverse className="activity-card" color='dark' data-tip data-for="body-weight">
+                        <Card body inverse className="activity-card" color='dark' data-tip data-for="body-weight" onClick={() => setBodyToggle(!bodyToggle)}>
                             <ReactTooltip id="body-weight" place="bottom" effect="solid">
                                 recent body weight
                             </ReactTooltip>
@@ -89,15 +92,15 @@ function ActivityCards({ workouts }) {
             </Row>
 
             <FadeIn delay={800} transitionDuration={2000}>
-                <div className='charts-container'>
+                {bodyToggle ? <><div className='charts-container'>
                     <BodyWeightChart workouts={workouts} />
-                </div>
-                <div className='charts-container'>
+                </div></> : null}
+                {calorieToggle ? <><div className='charts-container'>
                     <CaloriesChart workouts={workouts} />        
-                </div>
-                <div className='charts-container'>
+                </div></> : null}
+                {oneRepToggle ? <><div className='charts-container'>
                     <OneRMChart workouts={workouts} />        
-                </div>
+                </div></> : null}
             </FadeIn>        
             
         </div>
