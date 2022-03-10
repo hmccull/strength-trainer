@@ -11,6 +11,7 @@ import FadeIn from 'react-fade-in';
 import BodyWeightChart from "./BodyWeightChart";
 import OneRMChart from "./OneRMChart";
 import CaloriesChart from "./CaloriesChart";
+import WorkoutCalendar from "./WorkoutCalendar";
 
 
 
@@ -18,6 +19,7 @@ function ActivityCards({ workouts }) {
     const [bodyToggle, setBodyToggle] = useState(false);
     const [calorieToggle, setCalorieToggle] = useState(false);
     const [oneRepToggle, setOneRepToggle] = useState(false);
+    const [workoutToggle, setWorkoutToggle] = useState(false);
     
     // will update on weekly/monthly basis
     let calorieCount = 0;
@@ -32,7 +34,7 @@ function ActivityCards({ workouts }) {
             <Row md={4}>
                 <FadeIn transitionDuration={2000}>
                     <Col>
-                        <Card body inverse className="activity-card" color='dark' data-tip data-for="total-workouts">
+                        <Card body inverse className="activity-card" color='dark' data-tip data-for="total-workouts" onClick={() => setWorkoutToggle(!workoutToggle)}>
                             <ReactTooltip id="total-workouts" place="bottom" effect="solid">
                                 workouts completed
                             </ReactTooltip>
@@ -92,6 +94,9 @@ function ActivityCards({ workouts }) {
             </Row>
 
             <FadeIn delay={800} transitionDuration={2000}>
+                {workoutToggle ? <><div className='charts-container'>
+                    <WorkoutCalendar workouts={workouts} />
+                </div></> : null}
                 {bodyToggle ? <><div className='charts-container'>
                     <BodyWeightChart workouts={workouts} />
                 </div></> : null}
