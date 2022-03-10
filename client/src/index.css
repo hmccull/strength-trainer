@@ -52,8 +52,8 @@ body::-webkit-scrollbar {
 }
 
 .charts-container {
-  margin-left: 15%;
-  margin-right: 15%;
+  margin-left: 10%;
+  margin-right: 10%;
   max-width: 99vw;
 }
 
@@ -177,6 +177,16 @@ body::-webkit-scrollbar {
 
 /* * charts */
 
+#workout-chart {
+  text-align: center;
+  margin-top: 40px;
+  background-color: rgba(240, 248, 255, 0.556);
+  box-shadow: 1px 1px 15px 1px #000;
+  padding: 100px;
+  padding-top: 75px;
+  border-radius: 15px;
+}
+
 #body-weight-chart { 
   text-align: center;
   margin-top: 40px;
@@ -221,7 +231,7 @@ body::-webkit-scrollbar {
 .chart-titles {
   padding-bottom: 20px;
   color: #61dafb;
-  font-weight: 200;
+  font-weight: 300;
 }
 
 #home-header {
