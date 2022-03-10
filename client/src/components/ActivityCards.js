@@ -10,6 +10,7 @@ import FadeIn from 'react-fade-in';
 
 import BodyWeightChart from "./BodyWeightChart";
 import OneRMChart from "./OneRMChart";
+import CaloriesChart from "./CaloriesChart";
 
 
 
@@ -90,6 +91,9 @@ function ActivityCards({ workouts }) {
             <FadeIn delay={800} transitionDuration={2000}>
                 <div className='charts-container'>
                     <BodyWeightChart workouts={workouts} />
+                </div>
+                <div className='charts-container'>
+                    <CaloriesChart workouts={workouts} />        
                 </div>
                 <div className='charts-container'>
                     <OneRMChart workouts={workouts} />        
