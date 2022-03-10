@@ -177,6 +177,11 @@ body::-webkit-scrollbar {
   margin-top: 40px;
 }
 
+#calories-chart {
+  text-align: center;
+  margin-top: 40px;
+}
+
 #rep-max-chart {
   text-align: center;
   margin-top: 40px;
