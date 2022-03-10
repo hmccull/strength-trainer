@@ -153,6 +153,11 @@ body::-webkit-scrollbar {
   box-shadow: 0px 0px 5px 1px #fff;
 }
 
+.activity-card:hover {
+  box-shadow: 0px 0px 5px 2px #61dafb;
+  cursor: pointer;
+}
+
 .select-card {
   margin: 20px;
   box-shadow: 1px 1px 20px 2px #000;
